@@ -1,0 +1,114 @@
+{
+  "lastUpdated": "2026-03-06",
+  "note": "Curated sources list for the Iran/Israel/US dashboard. Used for manual pulls now; later for OpenClaw cron/agent update jobs.",
+  "feeds": [
+    {
+      "id": "ap_epic_fury_timeline",
+      "name": "AP News \u2014 What led up to Trump's decision to strike Iran",
+      "url": "https://apnews.com/article/iran-united-states-trump-strikes-6c602da7d44cb8c34fa1a9f85f352e4a",
+      "type": "news_article",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "web_fetch_ok"
+    },
+    {
+      "id": "bbc_trump_statement_lines",
+      "name": "BBC \u2014 Six key lines from Trump's statement on Iran strikes",
+      "url": "https://www.bbc.co.uk/news/articles/c620d3nnw80o",
+      "type": "news_article",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "web_fetch_ok"
+    },
+    {
+      "id": "isw_iran_update",
+      "name": "ISW \u2014 Iran Update (morning/evening special reports)",
+      "url": "https://understandingwar.org/",
+      "type": "analysis",
+      "trust": "medium",
+      "refresh": "2x_daily",
+      "access": "web_fetch_ok"
+    },
+    {
+      "id": "wiki_2026_iran_war",
+      "name": "Wikipedia \u2014 2026 Iran war",
+      "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+      "type": "wiki",
+      "trust": "low",
+      "refresh": "daily",
+      "access": "web_fetch_ok"
+    },
+    {
+      "id": "wiki_list_of_attacks",
+      "name": "Wikipedia \u2014 List of attacks during the 2026 Iran conflict",
+      "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
+      "type": "wiki",
+      "trust": "low",
+      "refresh": "daily",
+      "access": "web_fetch_ok"
+    },
+    {
+      "id": "reuters_middle_east",
+      "name": "Reuters \u2014 Middle East",
+      "url": "https://www.reuters.com/world/middle-east/",
+      "type": "news_index",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "blocked_401_js"
+    },
+    {
+      "id": "dod_contracts",
+      "name": "U.S. DoD \u2014 Contracts",
+      "url": "https://www.defense.gov/News/Contracts/",
+      "type": "official",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "likely_ok"
+    },
+    {
+      "id": "centcom_releases",
+      "name": "U.S. CENTCOM \u2014 Press Releases",
+      "url": "https://www.centcom.mil/MEDIA/PRESS-RELEASES/",
+      "type": "official",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "unknown"
+    },
+    {
+      "id": "idf_press",
+      "name": "IDF \u2014 Press Releases",
+      "url": "https://www.idf.il/en/mini-sites/press-releases/",
+      "type": "official",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "unknown"
+    },
+    {
+      "id": "iaea_press",
+      "name": "IAEA \u2014 Press Releases",
+      "url": "https://www.iaea.org/newscenter/pressreleases",
+      "type": "official",
+      "trust": "high",
+      "refresh": "daily",
+      "access": "likely_ok"
+    },
+    {
+      "id": "netblocks",
+      "name": "NetBlocks \u2014 Updates",
+      "url": "https://netblocks.org/",
+      "type": "osint",
+      "trust": "medium",
+      "refresh": "daily",
+      "access": "likely_ok"
+    },
+    {
+      "id": "liveuamap",
+      "name": "LiveUAmap \u2014 Middle East",
+      "url": "https://liveuamap.com/",
+      "type": "osint",
+      "trust": "low",
+      "refresh": "hourly",
+      "access": "unknown"
+    }
+  ]
+}

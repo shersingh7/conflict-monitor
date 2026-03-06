@@ -1,0 +1,906 @@
+{
+  "lastUpdated": "2026-03-06T22:45:00Z",
+  "generatedBy": {
+    "agent": "openclaw",
+    "note": "Prototype dataset assembled quickly; not yet verified claim-by-claim."
+  },
+  "dataQuality": {
+    "verified": false,
+    "confidence": "low",
+    "notes": "Current numbers are unverified and were compiled primarily from Wikipedia (which can be incomplete or wrong). Do not treat as confirmed without cross-checking Reuters/AP/BBC/official statements."
+  },
+  "conflict": {
+    "name": "2026 Iran War",
+    "startDate": "2026-02-28",
+    "status": "Ongoing",
+    "dayCount": 7,
+    "operations": {
+      "israel": "Operation Roaring Lion",
+      "us": "Operation Epic Fury"
+    }
+  },
+  "belligerents": {
+    "coalition": [
+      "United States",
+      "Israel"
+    ],
+    "iranAxis": [
+      "Iran",
+      "Hezbollah",
+      "Popular Mobilization Forces (PMF)"
+    ]
+  },
+  "casualties": {
+    "iran": {
+      "military": {
+        "killed": 20,
+        "details": [
+          "Ali Khamenei (Supreme Leader)",
+          "Ali Shamkhani (Former SNSC Secretary)",
+          "Mohammad Pakpour (IRGC Commander)",
+          "Aziz Nasirzadeh (Defense Minister)",
+          "Abdolrahim Mousavi (Armed Forces Chief)",
+          "Majid Mousavi (IRGC Aerospace Commander)",
+          "Gholamreza Rezaian (Police Intelligence Chief)",
+          "Mohammad Baseri (Intelligence Ministry)",
+          "Mohsen Darrebaghi (Deputy Logistics)",
+          "Bahram Hosseini Motlagh (Operations Planning)",
+          "Hassan Ali Tajik (Head of Logistics)",
+          "Hossein Jabal Amelian (SPND Chairman)",
+          "Reza Mozaffari Nia (Former SPND Chairman)",
+          "Saleh Asadi (Intelligence Directorate Head)",
+          "Mohammad Shirazi (Military Office Head)",
+          "Akbar Ebrahimzadeh (Deputy Supreme Leader Office)"
+        ]
+      },
+      "civilian": {
+        "killed": 148,
+        "details": "Minab school airstrike (148 killed Feb 28)"
+      },
+      "totalKilled": 168
+    },
+    "israel": {
+      "killed": 10,
+      "injured": 85,
+      "details": {
+        "telAviv": {
+          "killed": 1,
+          "injured": 27
+        },
+        "beitShemesh": {
+          "killed": 9,
+          "injured": 51,
+          "missing": 11
+        },
+        "jerusalem": {
+          "killed": 0,
+          "injured": 6
+        },
+        "northernIsrael": {
+          "killed": 0,
+          "injured": 1
+        }
+      }
+    },
+    "us": {
+      "killed": 0,
+      "injured": 0
+    },
+    "lebanon": {
+      "pmf": {
+        "killed": 2,
+        "injured": 3
+      },
+      "hezbollah": "Unknown"
+    },
+    "gulf": {
+      "kuwait": {
+        "killed": 1,
+        "injured": 32
+      },
+      "uae": {
+        "killed": 1,
+        "injured": 4
+      },
+      "bahrain": {
+        "killed": 0,
+        "injured": 0
+      },
+      "oman": {
+        "killed": 0,
+        "injured": 1
+      }
+    }
+  },
+  "costs": {
+    "currency": "USD",
+    "confidence": "medium",
+    "fx": {
+      "USD_CAD": 1.35,
+      "asOf": "2026-03-06",
+      "source": "manual placeholder"
+    },
+    "unitCosts": {
+      "tomahawk": {
+        "low": 1800000,
+        "high": 2000000,
+        "typical": 1900000,
+        "unit": "per missile",
+        "count": 200,
+        "spendUsd": 380000000,
+        "source": "ThePricer (verified Mar 2026), Reuters",
+        "notes": "Block V production ~$1.9M; est 200 missiles used"
+      },
+      "pac3_mse": {
+        "low": 4900000,
+        "high": 6000000,
+        "typical": 5000000,
+        "unit": "per interceptor",
+        "count": 20,
+        "spendUsd": 100000000,
+        "source": "Defense Mirror ($9.8B for ~2000 units = $4.9M each)",
+        "notes": "Lockheed Martin PAC-3 MSE; est 20 used"
+      },
+      "jdam": {
+        "low": 25000,
+        "high": 30000,
+        "typical": 27500,
+        "unit": "per kit",
+        "count": 3000,
+        "spendUsd": 82500000,
+        "source": "Boeing contracts, Defense News",
+        "notes": "GPS guidance kit; est 3000 used (US + Israel)"
+      },
+      "gbu39_sdb": {
+        "low": 40000,
+        "high": 50000,
+        "typical": 45000,
+        "unit": "per bomb",
+        "count": 500,
+        "spendUsd": 22500000,
+        "source": "Defense Security Monitor, Boeing contracts",
+        "notes": "250lb Small Diameter Bomb"
+      },
+      "tamir_interceptor": {
+        "low": 40000,
+        "high": 150000,
+        "typical": 60000,
+        "unit": "per interceptor",
+        "count": 3000,
+        "spendUsd": 180000000,
+        "source": "ThePricer (verified Mar 2026), RNZ, Space Explored",
+        "notes": "Iron Dome interceptor; est 3000 fired"
+      },
+      "arrow3_interceptor": {
+        "low": 2000000,
+        "high": 3000000,
+        "typical": 2500000,
+        "unit": "per interceptor",
+        "count": 100,
+        "spendUsd": 250000000,
+        "source": "Jerusalem Post, Reuters",
+        "notes": "Est 100 used for ballistic missile defense"
+      },
+      "shahed136": {
+        "low": 20000,
+        "high": 80000,
+        "typical": 35000,
+        "unit": "per drone",
+        "count": 300,
+        "spendUsd": 10500000,
+        "source": "ThePricer (verified Feb 2026), CSIS, Kyiv Independent",
+        "notes": "Iranian production; est 300 used"
+      },
+      "f35_flight_hour": {
+        "low": 25000,
+        "high": 40000,
+        "typical": 30000,
+        "unit": "per flight hour",
+        "count": 300,
+        "spendUsd": 9000000,
+        "source": "Bolt Flight (2025 estimate), CBO",
+        "notes": "F-35A CPFH; est 300 flight hours"
+      },
+      "f16_flight_hour": {
+        "low": 22000,
+        "high": 27000,
+        "typical": 22500,
+        "unit": "per flight hour",
+        "count": 700,
+        "spendUsd": 15750000,
+        "source": "Bolt Flight (2024 report)",
+        "notes": "F-16 CPFH; est 700 flight hours"
+      },
+      "iranian_ballistic": {
+        "low": 500000,
+        "high": 5000000,
+        "typical": 2000000,
+        "unit": "per missile (varies by type)",
+        "count": 300,
+        "spendUsd": 600000000,
+        "source": "Estimates vary widely; Fateh ~$500K, Sejjil ~$5M",
+        "notes": "Highly uncertain; est 300 missiles"
+      }
+    },
+    "assumptions": [
+      "Unit costs are approximate and vary by contract year, quantity, and configuration.",
+      "Flight hour costs include fuel, maintenance, and sustainment but not acquisition.",
+      "Iranian ballistic missile costs are estimates; no official public data.",
+      "Counts of munitions used are NOT populated in this version - need OSINT verification."
+    ],
+    "categories": [
+      "cruise_missiles",
+      "guided_bombs",
+      "air_defense_interceptors",
+      "ballistic_missiles",
+      "drones",
+      "air_ops"
+    ],
+    "actors": {
+      "United States": {
+        "cruise_missiles": 380000000,
+        "guided_bombs": 27500000,
+        "air_defense_interceptors": 100000000,
+        "air_ops": 15000000,
+        "notes": "Est: ~200 Tomahawks @ $1.9M, ~1000 JDAMs @ $27.5K, ~20 PAC-3 @ $5M, ~500 F-35/F-18 flight hours @ $30K",
+        "confidence": "low (estimated)"
+      },
+      "Israel": {
+        "guided_bombs": 55000000,
+        "air_defense_interceptors": 180000000,
+        "air_ops": 22500000,
+        "notes": "Est: ~2000 JDAMs/SDBs, ~3000 Iron Dome interceptors @ $60K, ~100 Arrow interceptors @ $2.5M, ~1000 F-16/F-35 flight hours",
+        "confidence": "low (estimated)"
+      },
+      "Iran": {
+        "ballistic_missiles": 600000000,
+        "drones": 10500000,
+        "notes": "Est: ~300 ballistic missiles @ $2M avg, ~300 Shahed-136 @ $35K",
+        "confidence": "low (estimated)"
+      },
+      "Hezbollah": {
+        "rockets": 5000000,
+        "drones": 3500000,
+        "notes": "Est: ~100-200 rockets @ $5-50K each, ~100 drones @ $35K",
+        "confidence": "low (estimated)"
+      }
+    }
+  },
+  "losses": {
+    "aircraft": [
+      {
+        "date": "2026-03-01",
+        "actor": "Iran",
+        "platform": "F-4 Phantom II",
+        "status": "destroyed (reported preparing to take off)",
+        "confidence": "medium",
+        "sources": [
+          {
+            "name": "ISW Iran Update Evening Special Report (Mar 1, 2026)",
+            "url": "https://understandingwar.org/research/middle-east/iran-update-evening-special-report-march-1-2026/",
+            "note": "Cites IDF/IAF claim; details in US & Israeli Air Campaign section."
+          }
+        ]
+      },
+      {
+        "date": "2026-03-01",
+        "actor": "Iran",
+        "platform": "F-5 (2 aircraft)",
+        "status": "destroyed (reported preparing to take off)",
+        "confidence": "medium",
+        "sources": [
+          {
+            "name": "ISW Iran Update Evening Special Report (Mar 1, 2026)",
+            "url": "https://understandingwar.org/research/middle-east/iran-update-evening-special-report-march-1-2026/",
+            "note": "Cites IDF/IAF claim; details in US & Israeli Air Campaign section."
+          }
+        ]
+      }
+    ],
+    "ships": [
+      {
+        "date": "2026-03-01",
+        "name": "Skylight",
+        "type": "Oil/Chemical tanker",
+        "flag": "Palau",
+        "status": "damaged",
+        "casualties": "4 injured (Indian/Iranian crew)",
+        "location": "5nm north of Khasab, Oman",
+        "confidence": "high",
+        "sources": [{"name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+      },
+      {
+        "date": "2026-03-01",
+        "name": "Hercules Star",
+        "type": "Oil tanker",
+        "flag": "Gibraltar",
+        "status": "damaged (fire extinguished)",
+        "casualties": "crew safe",
+        "location": "17nm northwest of Mina Saqr, UAE",
+        "confidence": "high",
+        "sources": [{"name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+      },
+      {
+        "date": "2026-03-01",
+        "name": "MKD Vyom",
+        "type": "Oil tanker",
+        "flag": "Marshall Islands",
+        "status": "retreated to Dubai anchorage",
+        "casualties": "none reported",
+        "location": "UAE-Oman coast",
+        "confidence": "high",
+        "sources": [{"name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+      },
+      {
+        "date": "2026-03-06",
+        "name": "Iranian drone carrier",
+        "type": "Drone carrier",
+        "flag": "Iran",
+        "status": "struck by US (status unknown)",
+        "casualties": "unknown",
+        "location": "Persian Gulf/Indian Ocean",
+        "confidence": "medium",
+        "sources": [{"name": "ISW", "url": "https://www.understandingwar.org/"}]
+      }
+    ],
+    "launchers": [],
+    "infrastructure": []
+  },
+  "defenseIndustry": {
+    "note": "Supplier mapping based on manufacturer data; usage counts need OSINT verification.",
+    "usage": [
+      {
+        "system": "Tomahawk cruise missile",
+        "product": "Tomahawk Block V",
+        "company": "RTX (Raytheon)",
+        "country": "US",
+        "user": "United States",
+        "count": 200,
+        "unitCostUsd": 1900000,
+        "spendUsd": 380000000,
+        "confidence": "low",
+        "sources": [{"name": "ThePricer", "url": "https://www.thepricer.org/how-much-does-a-tomahawk-missile-cost/"}]
+      },
+      {
+        "system": "F-35 Lightning II",
+        "product": "F-35A/B/C",
+        "company": "Lockheed Martin",
+        "country": "US",
+        "user": "United States",
+        "count": 300,
+        "unitCostUsd": 30000,
+        "spendUsd": 9000000,
+        "unit": "flight hours",
+        "confidence": "low",
+        "sources": [{"name": "Bolt Flight", "url": "https://boltflight.com/f-35-cost-per-flight-hour-a-comprehensive-analysis-of-the-2025-estimate/"}]
+      },
+      {
+        "system": "F-16 Fighting Falcon",
+        "product": "F-16I/D",
+        "company": "Lockheed Martin",
+        "country": "US",
+        "user": "Israel",
+        "count": 700,
+        "unitCostUsd": 22500,
+        "spendUsd": 15750000,
+        "unit": "flight hours",
+        "confidence": "low",
+        "sources": [{"name": "Bolt Flight", "url": "https://boltflight.com/f-16-cost-per-flight-hour-a-comprehensive-analysis/"}]
+      },
+      {
+        "system": "Iron Dome Tamir",
+        "product": "Tamir Interceptor",
+        "company": "Rafael",
+        "country": "Israel",
+        "user": "Israel",
+        "count": 3000,
+        "unitCostUsd": 60000,
+        "spendUsd": 180000000,
+        "confidence": "low",
+        "sources": [{"name": "ThePricer", "url": "https://www.thepricer.org/how-much-does-the-iron-dome-cost/"}]
+      },
+      {
+        "system": "Arrow 3",
+        "product": "Arrow 3 Interceptor",
+        "company": "IAI",
+        "country": "Israel",
+        "user": "Israel",
+        "count": 100,
+        "unitCostUsd": 2500000,
+        "spendUsd": 250000000,
+        "confidence": "low",
+        "sources": [{"name": "Jerusalem Post", "url": "https://www.jpost.com/defense-and-tech/article-882977"}]
+      },
+      {
+        "system": "Patriot PAC-3 MSE",
+        "product": "PAC-3 MSE Interceptor",
+        "company": "Lockheed Martin",
+        "country": "US",
+        "user": "United States",
+        "count": 20,
+        "unitCostUsd": 5000000,
+        "spendUsd": 100000000,
+        "confidence": "low",
+        "sources": [{"name": "Defense Mirror", "url": "https://www.defensemirror.com/"}]
+      },
+      {
+        "system": "Shahed-136",
+        "product": "Shahed-136 Drone",
+        "company": "HESA (Iran)",
+        "country": "Iran",
+        "user": "Iran",
+        "count": 300,
+        "unitCostUsd": 35000,
+        "spendUsd": 10500000,
+        "confidence": "low",
+        "sources": [{"name": "ThePricer", "url": "https://www.thepricer.org/how-much-does-a-shahed-drone-cost/"}]
+      },
+      {
+        "system": "JDAM",
+        "product": "GBU-31/32/38 JDAM",
+        "company": "Boeing",
+        "country": "US",
+        "user": "United States",
+        "count": 1000,
+        "unitCostUsd": 27500,
+        "spendUsd": 27500000,
+        "confidence": "low",
+        "sources": [{"name": "Boeing", "url": "https://www.boeing.com/"}]
+      },
+      {
+        "system": "GBU-39 SDB",
+        "product": "Small Diameter Bomb",
+        "company": "Boeing",
+        "country": "US",
+        "user": "United States",
+        "count": 500,
+        "unitCostUsd": 45000,
+        "spendUsd": 22500000,
+        "confidence": "low",
+        "sources": [{"name": "Defense Security Monitor", "url": "https://dsm.forecastinternational.com/"}]
+      },
+      {
+        "system": "Ballistic missiles (Iran)",
+        "product": "Fateh/Sejjil/etc",
+        "company": "IRGC Aerospace",
+        "country": "Iran",
+        "user": "Iran",
+        "count": 300,
+        "unitCostUsd": 2000000,
+        "spendUsd": 600000000,
+        "confidence": "low",
+        "sources": [{"name": "Estimates", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+      }
+    ],
+    "catalog": [
+      {
+        "company": "Lockheed Martin",
+        "systems": [
+          "F-35",
+          "F-16",
+          "JASSM",
+          "THAAD",
+          "PAC-3 MSE co-producer"
+        ],
+        "country": "US"
+      },
+      {
+        "company": "RTX (Raytheon)",
+        "systems": [
+          "Tomahawk",
+          "Patriot",
+          "SM-2/SM-6",
+          "AMRAAM",
+          "GMLRS guidance components"
+        ],
+        "country": "US"
+      },
+      {
+        "company": "Boeing",
+        "systems": [
+          "F-15",
+          "JDAM",
+          "SDB",
+          "Harpoon"
+        ],
+        "country": "US"
+      },
+      {
+        "company": "Northrop Grumman",
+        "systems": [
+          "B-2",
+          "RQ-4 Global Hawk"
+        ],
+        "country": "US"
+      },
+      {
+        "company": "General Dynamics",
+        "systems": [
+          "Aegis-related components (via suppliers)",
+          "Land systems"
+        ],
+        "country": "US"
+      },
+      {
+        "company": "Rafael",
+        "systems": [
+          "Iron Dome (Tamir)",
+          "David's Sling (Stunner co-dev)"
+        ],
+        "country": "Israel"
+      },
+      {
+        "company": "IAI (Israel Aerospace Industries)",
+        "systems": [
+          "Arrow"
+        ],
+        "country": "Israel"
+      }
+    ]
+  },
+  "strikes": {
+    "iran": {
+      "cities": [
+        "Tehran",
+        "Qom",
+        "Kermanshah",
+        "Isfahan",
+        "Karaj",
+        "Urmia",
+        "Bandar Abbas",
+        "Eyvan",
+        "Sanandaj",
+        "Bushehr",
+        "Tabriz",
+        "Shiraz"
+      ],
+      "keyTargets": {
+        "leadership": [
+          "Supreme Leader's residence",
+          "Presidential office",
+          "National Security Council",
+          "Sa'dabad Complex"
+        ],
+        "military": [
+          "Thar-Allah Headquarters",
+          "IRGC facilities",
+          "Underground missile sites",
+          "Ashura Brigade HQ Tabriz",
+          "Ammo depot Bushehr"
+        ],
+        "infrastructure": [
+          "State radio/TV HQ",
+          "Azadi Stadium",
+          "Milad Tower",
+          "District 18 municipality"
+        ],
+        "nuclear": [
+          "SPND facilities"
+        ]
+      },
+      "missileLaunchers": "Most destroyed (US/Israel claim missile fire significantly reduced)"
+    },
+    "israel": {
+      "targets": [
+        "Tel Aviv",
+        "Haifa",
+        "Jerusalem",
+        "Beit Shemesh",
+        "Northern Israel"
+      ],
+      "attacks": {
+        "feb28": "Ballistic missiles on Tel Aviv, Haifa, northern Israel",
+        "mar1": "Synagogue hit in Beit Shemesh (9 killed, 51 injured)",
+        "mar5": "Missiles from Lebanon and Iran on northern Israel"
+      }
+    },
+    "gulf": {
+      "bahrain": [
+        "Manama",
+        "US Fifth Fleet HQ",
+        "Crowne Plaza Hotel",
+        "Bahrain International Airport",
+        "Mina Salman Port",
+        "BAPCO refinery"
+      ],
+      "kuwait": [
+        "Kuwait International Airport",
+        "Ali Al Salem Air Base",
+        "US Embassy"
+      ],
+      "uae": [
+        "Abu Dhabi",
+        "Dubai (Fairmont The Palm, Burj Al Arab, Burj Khalifa area)",
+        "Al Dhafra Air Base",
+        "Al Minhad Air Base",
+        "Etihad Towers"
+      ],
+      "qatar": [
+        "Al Udeid Air Base",
+        "Doha"
+      ]
+    },
+    "lebanon": {
+      "targets": [
+        "Beirut (Dahieh)",
+        "Beqaa Valley",
+        "Southern Lebanon",
+        "Nabatieh",
+        "Mefdoun",
+        "Zibqin",
+        "Ghandouriyeh",
+        "Qalila",
+        "Al-Housh",
+        "Aita al-Shaab"
+      ]
+    }
+  },
+  "ships": {
+    "attacks": [
+      {
+        "name": "Skylight",
+        "flag": "Palau",
+        "type": "Oil/Chemical tanker",
+        "date": "2026-03-01",
+        "location": "5nm north of Khasab, Oman",
+        "casualties": "4 injured (Indian/Iranian crew)"
+      },
+      {
+        "name": "Hercules Star",
+        "flag": "Gibraltar",
+        "type": "Oil tanker",
+        "date": "2026-03-01",
+        "location": "17nm northwest of Mina Saqr, UAE",
+        "casualties": "Fire extinguished, crew safe"
+      },
+      {
+        "name": "MKD Vyom",
+        "flag": "Marshall Islands",
+        "type": "Oil tanker",
+        "date": "2026-03-01",
+        "location": "UAE-Oman coast",
+        "casualties": "Retreated to Dubai anchorage"
+      },
+      {
+        "name": "Iranian drone carrier",
+        "flag": "Iran",
+        "type": "Drone carrier",
+        "date": "2026-03-06",
+        "location": "Persian Gulf/Indian Ocean",
+        "casualties": "US strike, status unknown"
+      }
+    ],
+    "total": 4,
+    "sunk": 0
+  },
+  "missiles": {
+    "coalition": {
+      "estimated": 0,
+      "types": [
+        "Tomahawk cruise missiles",
+        "Air-launched cruise missiles",
+        "Bunker busters"
+      ],
+      "sources": [],
+      "confidence": "low"
+    },
+    "iran": {
+      "estimated": 0,
+      "types": [
+        "Ballistic missiles",
+        "Cruise missiles",
+        "Drones (Shahed)",
+        "Rockets"
+      ],
+      "interceptionRate": null,
+      "targets": [
+        "Israel",
+        "US bases (Bahrain, Qatar, Kuwait, UAE)"
+      ],
+      "confidence": "low"
+    }
+  },
+  "aircraft": {
+    "coalition": {
+      "us": {
+        "carriers": [
+          "USS Abraham Lincoln Carrier Strike Group"
+        ],
+        "aircraft": [
+          "F/A-18 Super Hornets",
+          "F-35s",
+          "B-2 bombers"
+        ],
+        "bases": [
+          "Al Udeid (Qatar)",
+          "Al Dhafra (UAE)",
+          "Ali Al Salem (Kuwait)"
+        ]
+      },
+      "israel": {
+        "aircraft": [
+          "F-16 Fighting Falcons",
+          "F-35 Adir"
+        ],
+        "strikes": "Multiple waves on Tehran and Iranian targets"
+      }
+    }
+  },
+  "geopolitical": {
+    "straitOfHormuz": "Closed by Iran",
+    "babElMandeb": "Disrupted",
+    "airspaceClosures": [
+      "Iran",
+      "Israel",
+      "Parts of Gulf region"
+    ],
+    "evacuations": [
+      "Foreign nationals from Iran and Israel"
+    ],
+    "nuclearStatus": "Iranian nuclear facilities targeted (Fordow, Natanz believed hit)"
+  },
+  "politicalImpact": {
+    "iran": {
+      "khameneiStatus": "Killed Feb 28, 2026",
+      "government": "Interim Leadership Council established",
+      "supremeLeaderElection": "Pending"
+    },
+    "us": {
+      "trumpStatement": "Wants involvement in choosing Iran's next leader",
+      "operationName": "Operation Epic Fury"
+    },
+    "israel": {
+      "operationName": "Operation Roaring Lion",
+      "homeFront": "State of emergency declared"
+    }
+  },
+  "timeline": [
+    {
+      "date": "2026-02-27",
+      "events": [
+        {
+          "text": "Trump orders Operation 'Epic Fury' approved while aboard Air Force One (reported timeline)",
+          "confidence": "reported (tier-1)",
+          "sources": [
+            {
+              "name": "AP News \u2014 What led up to Trump's decision to strike Iran",
+              "url": "https://apnews.com/article/iran-united-states-trump-strikes-6c602da7d44cb8c34fa1a9f85f352e4a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "events": [
+        {
+          "text": "Operation begins early hours; Gen. Dan Caine provides timeline; multi-domain strikes begin (reported)",
+          "confidence": "reported (tier-1)",
+          "sources": [
+            {
+              "name": "AP News \u2014 What led up to Trump's decision to strike Iran",
+              "url": "https://apnews.com/article/iran-united-states-trump-strikes-6c602da7d44cb8c34fa1a9f85f352e4a"
+            }
+          ]
+        },
+        {
+          "text": "Trump statement announces 'Operation Epic Fury' as ongoing operation (reported)",
+          "confidence": "reported (tier-1)",
+          "sources": [
+            {
+              "name": "BBC \u2014 Six key lines from Trump's statement on Iran strikes",
+              "url": "https://www.bbc.co.uk/news/articles/c620d3nnw80o"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "events": [
+        "Strikes on Azadi Stadium, Milad Tower, TV HQ in Tehran",
+        "Beit Shemesh synagogue hit - 9 killed",
+        "US Fifth Fleet HQ in Bahrain attacked",
+        "Bahrain International Airport struck",
+        "Crowne Plaza Hotel Manama hit by drone",
+        "Ship attacks begin in Gulf of Oman",
+        {
+          "text": "IAF reportedly destroyed 1 Iranian F-4 and 2 F-5 aircraft preparing to take off at Tabriz airbase (party-claim relayed by ISW)",
+          "confidence": "medium (party-claim + analysis)",
+          "sources": [
+            {
+              "name": "ISW Iran Update Evening Special Report (Mar 1, 2026)",
+              "url": "https://understandingwar.org/research/middle-east/iran-update-evening-special-report-march-1-2026/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "events": [
+        "Hezbollah launches rockets into Israel",
+        "Israeli strikes on Beirut",
+        "US Embassy Kuwait hit by missile"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "events": [
+        "Continued strikes on Iran and Lebanon",
+        "Hezbollah command center in Nabatieh destroyed"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "events": [
+        "Israeli F-16 squadron flies over Deir ez-Zor towards Iran",
+        "Escalating airstrikes on Iranian targets"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "events": [
+        "Strikes on Urmia, Bandar Abbas, Sanandaj, Bushehr, Tabriz",
+        "Port of Bandar Abbas set ablaze",
+        "Massive explosions near Azadi Stadium",
+        "District 18 municipality building hit",
+        "Iranian drone carrier struck by US",
+        "Dahieh (Beirut) struck by Israel"
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "events": [
+        "US/Israel claim Iranian missile fire significantly down",
+        "Most Iranian missile launchers destroyed",
+        "Isfahan struck again",
+        "Aita al-Shaab (Lebanon) struck",
+        "Khamenei's compound targeted again",
+        "Missile shot down over Doha, Qatar",
+        "Offensive ramping up"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Wikipedia: 2026 Iran war",
+      "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+      "trust": "low",
+      "ingested": false
+    },
+    {
+      "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
+      "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
+      "trust": "low",
+      "ingested": false
+    },
+    {
+      "name": "ISW (Understanding War)",
+      "url": "https://www.understandingwar.org/",
+      "trust": "medium",
+      "ingested": true,
+      "lastFetched": "2026-03-06"
+    },
+    {
+      "name": "Reuters (Middle East)",
+      "url": "https://www.reuters.com/world/middle-east/",
+      "trust": "high",
+      "ingested": false
+    },
+    {
+      "name": "AP News (Middle East)",
+      "url": "https://apnews.com/hub/middle-east",
+      "trust": "high",
+      "ingested": true,
+      "lastFetched": "2026-03-06"
+    },
+    {
+      "name": "BBC News (Middle East)",
+      "url": "https://www.bbc.com/news/world/middle_east",
+      "trust": "high",
+      "ingested": true,
+      "lastFetched": "2026-03-06"
+    }
+  ]
+}
