@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-06T22:45:00Z",
+  "lastUpdated": "2026-03-07T12:00:38.571313Z",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Prototype dataset assembled quickly; not yet verified claim-by-claim."
@@ -307,7 +307,12 @@
         "casualties": "4 injured (Indian/Iranian crew)",
         "location": "5nm north of Khasab, Oman",
         "confidence": "high",
-        "sources": [{"name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+        "sources": [
+          {
+            "name": "Wikipedia: 2026 Iran war",
+            "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+          }
+        ]
       },
       {
         "date": "2026-03-01",
@@ -318,7 +323,12 @@
         "casualties": "crew safe",
         "location": "17nm northwest of Mina Saqr, UAE",
         "confidence": "high",
-        "sources": [{"name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+        "sources": [
+          {
+            "name": "Wikipedia: 2026 Iran war",
+            "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+          }
+        ]
       },
       {
         "date": "2026-03-01",
@@ -329,7 +339,12 @@
         "casualties": "none reported",
         "location": "UAE-Oman coast",
         "confidence": "high",
-        "sources": [{"name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+        "sources": [
+          {
+            "name": "Wikipedia: 2026 Iran war",
+            "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+          }
+        ]
       },
       {
         "date": "2026-03-06",
@@ -340,7 +355,12 @@
         "casualties": "unknown",
         "location": "Persian Gulf/Indian Ocean",
         "confidence": "medium",
-        "sources": [{"name": "ISW", "url": "https://www.understandingwar.org/"}]
+        "sources": [
+          {
+            "name": "ISW",
+            "url": "https://www.understandingwar.org/"
+          }
+        ]
       }
     ],
     "launchers": [],
@@ -359,7 +379,12 @@
         "unitCostUsd": 1900000,
         "spendUsd": 380000000,
         "confidence": "low",
-        "sources": [{"name": "ThePricer", "url": "https://www.thepricer.org/how-much-does-a-tomahawk-missile-cost/"}]
+        "sources": [
+          {
+            "name": "ThePricer",
+            "url": "https://www.thepricer.org/how-much-does-a-tomahawk-missile-cost/"
+          }
+        ]
       },
       {
         "system": "F-35 Lightning II",
@@ -372,7 +397,12 @@
         "spendUsd": 9000000,
         "unit": "flight hours",
         "confidence": "low",
-        "sources": [{"name": "Bolt Flight", "url": "https://boltflight.com/f-35-cost-per-flight-hour-a-comprehensive-analysis-of-the-2025-estimate/"}]
+        "sources": [
+          {
+            "name": "Bolt Flight",
+            "url": "https://boltflight.com/f-35-cost-per-flight-hour-a-comprehensive-analysis-of-the-2025-estimate/"
+          }
+        ]
       },
       {
         "system": "F-16 Fighting Falcon",
@@ -385,7 +415,12 @@
         "spendUsd": 15750000,
         "unit": "flight hours",
         "confidence": "low",
-        "sources": [{"name": "Bolt Flight", "url": "https://boltflight.com/f-16-cost-per-flight-hour-a-comprehensive-analysis/"}]
+        "sources": [
+          {
+            "name": "Bolt Flight",
+            "url": "https://boltflight.com/f-16-cost-per-flight-hour-a-comprehensive-analysis/"
+          }
+        ]
       },
       {
         "system": "Iron Dome Tamir",
@@ -397,7 +432,12 @@
         "unitCostUsd": 60000,
         "spendUsd": 180000000,
         "confidence": "low",
-        "sources": [{"name": "ThePricer", "url": "https://www.thepricer.org/how-much-does-the-iron-dome-cost/"}]
+        "sources": [
+          {
+            "name": "ThePricer",
+            "url": "https://www.thepricer.org/how-much-does-the-iron-dome-cost/"
+          }
+        ]
       },
       {
         "system": "Arrow 3",
@@ -409,7 +449,12 @@
         "unitCostUsd": 2500000,
         "spendUsd": 250000000,
         "confidence": "low",
-        "sources": [{"name": "Jerusalem Post", "url": "https://www.jpost.com/defense-and-tech/article-882977"}]
+        "sources": [
+          {
+            "name": "Jerusalem Post",
+            "url": "https://www.jpost.com/defense-and-tech/article-882977"
+          }
+        ]
       },
       {
         "system": "Patriot PAC-3 MSE",
@@ -421,7 +466,12 @@
         "unitCostUsd": 5000000,
         "spendUsd": 100000000,
         "confidence": "low",
-        "sources": [{"name": "Defense Mirror", "url": "https://www.defensemirror.com/"}]
+        "sources": [
+          {
+            "name": "Defense Mirror",
+            "url": "https://www.defensemirror.com/"
+          }
+        ]
       },
       {
         "system": "Shahed-136",
@@ -433,7 +483,12 @@
         "unitCostUsd": 35000,
         "spendUsd": 10500000,
         "confidence": "low",
-        "sources": [{"name": "ThePricer", "url": "https://www.thepricer.org/how-much-does-a-shahed-drone-cost/"}]
+        "sources": [
+          {
+            "name": "ThePricer",
+            "url": "https://www.thepricer.org/how-much-does-a-shahed-drone-cost/"
+          }
+        ]
       },
       {
         "system": "JDAM",
@@ -445,7 +500,12 @@
         "unitCostUsd": 27500,
         "spendUsd": 27500000,
         "confidence": "low",
-        "sources": [{"name": "Boeing", "url": "https://www.boeing.com/"}]
+        "sources": [
+          {
+            "name": "Boeing",
+            "url": "https://www.boeing.com/"
+          }
+        ]
       },
       {
         "system": "GBU-39 SDB",
@@ -457,7 +517,12 @@
         "unitCostUsd": 45000,
         "spendUsd": 22500000,
         "confidence": "low",
-        "sources": [{"name": "Defense Security Monitor", "url": "https://dsm.forecastinternational.com/"}]
+        "sources": [
+          {
+            "name": "Defense Security Monitor",
+            "url": "https://dsm.forecastinternational.com/"
+          }
+        ]
       },
       {
         "system": "Ballistic missiles (Iran)",
@@ -469,7 +534,12 @@
         "unitCostUsd": 2000000,
         "spendUsd": 600000000,
         "confidence": "low",
-        "sources": [{"name": "Estimates", "url": "https://en.wikipedia.org/wiki/2026_Iran_war"}]
+        "sources": [
+          {
+            "name": "Estimates",
+            "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+          }
+        ]
       }
     ],
     "catalog": [

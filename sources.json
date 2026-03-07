@@ -9,7 +9,9 @@
       "type": "news_article",
       "trust": "high",
       "refresh": "daily",
-      "access": "web_fetch_ok"
+      "access": "web_fetch_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "bbc_trump_statement_lines",
@@ -18,7 +20,9 @@
       "type": "news_article",
       "trust": "high",
       "refresh": "daily",
-      "access": "web_fetch_ok"
+      "access": "web_fetch_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "isw_iran_update",
@@ -27,7 +31,9 @@
       "type": "analysis",
       "trust": "medium",
       "refresh": "2x_daily",
-      "access": "web_fetch_ok"
+      "access": "web_fetch_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "wiki_2026_iran_war",
@@ -36,7 +42,9 @@
       "type": "wiki",
       "trust": "low",
       "refresh": "daily",
-      "access": "web_fetch_ok"
+      "access": "web_fetch_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "wiki_list_of_attacks",
@@ -45,7 +53,9 @@
       "type": "wiki",
       "trust": "low",
       "refresh": "daily",
-      "access": "web_fetch_ok"
+      "access": "web_fetch_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "reuters_middle_east",
@@ -81,7 +91,9 @@
       "type": "official",
       "trust": "high",
       "refresh": "daily",
-      "access": "unknown"
+      "access": "unknown",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "iaea_press",
@@ -90,7 +102,9 @@
       "type": "official",
       "trust": "high",
       "refresh": "daily",
-      "access": "likely_ok"
+      "access": "likely_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "netblocks",
@@ -99,7 +113,9 @@
       "type": "osint",
       "trust": "medium",
       "refresh": "daily",
-      "access": "likely_ok"
+      "access": "likely_ok",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "id": "liveuamap",
@@ -108,7 +124,9 @@
       "type": "osint",
       "trust": "low",
       "refresh": "hourly",
-      "access": "unknown"
+      "access": "unknown",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     }
   ]
 }
