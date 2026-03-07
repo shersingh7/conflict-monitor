@@ -4,7 +4,7 @@
 
 set -e
 
-cd /Users/shersingh/.openclaw/workspace/conflict-monitor
+cd /Users/shersingh/github/conflict-monitor
 
 echo "=== Conflict Monitor Daily Update ==="
 echo "Started: $(date)"
