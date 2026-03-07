@@ -12,8 +12,12 @@ echo "Started: $(date)"
 # Pull latest changes (in case manual edits were made)
 git pull --rebase origin main 2>/dev/null || true
 
-# Run the update script
+# Run the update script (uses web_fetch via OpenClaw or scrapling)
 python3 update_data.py
+
+# Optional: Fetch fresh data from Wikipedia
+echo "Fetching fresh data from sources..."
+curl -s "https://en.wikipedia.org/wiki/2026_Iran_war" > /tmp/iran_war_wiki.txt 2>/dev/null || echo "Note: Wikipedia fetch requires web_fetch tool"
 
 # Check if there are changes to commit
 if git diff --quiet data.json sources.json; then
