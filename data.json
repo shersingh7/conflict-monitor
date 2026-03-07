@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-07T12:00:38.571313Z",
+  "lastUpdated": "2026-03-07T15:40:54.433927+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Prototype dataset assembled quickly; not yet verified claim-by-claim."
@@ -13,7 +13,7 @@
     "name": "2026 Iran War",
     "startDate": "2026-02-28",
     "status": "Ongoing",
-    "dayCount": 7,
+    "dayCount": 8,
     "operations": {
       "israel": "Operation Roaring Lion",
       "us": "Operation Epic Fury"
@@ -33,80 +33,165 @@
   "casualties": {
     "iran": {
       "military": {
-        "killed": 20,
-        "details": [
-          "Ali Khamenei (Supreme Leader)",
-          "Ali Shamkhani (Former SNSC Secretary)",
-          "Mohammad Pakpour (IRGC Commander)",
-          "Aziz Nasirzadeh (Defense Minister)",
-          "Abdolrahim Mousavi (Armed Forces Chief)",
-          "Majid Mousavi (IRGC Aerospace Commander)",
-          "Gholamreza Rezaian (Police Intelligence Chief)",
-          "Mohammad Baseri (Intelligence Ministry)",
-          "Mohsen Darrebaghi (Deputy Logistics)",
-          "Bahram Hosseini Motlagh (Operations Planning)",
-          "Hassan Ali Tajik (Head of Logistics)",
-          "Hossein Jabal Amelian (SPND Chairman)",
-          "Reza Mozaffari Nia (Former SPND Chairman)",
-          "Saleh Asadi (Intelligence Directorate Head)",
-          "Mohammad Shirazi (Military Office Head)",
-          "Akbar Ebrahimzadeh (Deputy Supreme Leader Office)"
+        "killed": "1,000-1,500 (estimated)",
+        "officials_killed": 16,
+        "officials": [
+          "Ali Khamenei (Supreme Leader) \u2014 28 Feb",
+          "Ali Shamkhani (Former SNSC Secretary) \u2014 28 Feb",
+          "Mohammad Pakpour (IRGC Commander) \u2014 28 Feb",
+          "Aziz Nasirzadeh (Defense Minister) \u2014 28 Feb",
+          "Abdolrahim Mousavi (Armed Forces Chief) \u2014 28 Feb",
+          "Majid Mousavi (IRGC Aerospace Commander) \u2014 28 Feb",
+          "Gholamreza Rezaian (Police Intelligence Chief) \u2014 28 Feb",
+          "Mohammad Baseri (Intelligence Ministry) \u2014 28 Feb",
+          "Mohsen Darrebaghi (Deputy Logistics) \u2014 28 Feb",
+          "Bahram Hosseini Motlagh (Operations Planning) \u2014 28 Feb",
+          "Hassan Ali Tajik (Head of Logistics) \u2014 28 Feb",
+          "Hossein Jabal Amelian (SPND Chairman) \u2014 28 Feb",
+          "Reza Mozaffari Nia (Former SPND Chairman) \u2014 28 Feb",
+          "Saleh Asadi (Intelligence Directorate Head) \u2014 28 Feb",
+          "Mohammad Shirazi (Military Office Head) \u2014 28 Feb",
+          "Akbar Ebrahimzadeh (Deputy Supreme Leader Office) \u2014 28 Feb"
         ]
       },
       "civilian": {
-        "killed": 148,
-        "details": "Minab school airstrike (148 killed Feb 28)"
+        "killed": "787-1,046 (estimates vary)",
+        "iranian_red_crescent": 1332,
+        "human_rights_activists": 1172,
+        "minab_school_airstrike": 148,
+        "details": "Minab school airstrike (148 killed Feb 28) + ongoing civilian casualties"
       },
-      "totalKilled": 168
+      "totalKilled": "787-1,548",
+      "totalInjured": 747,
+      "sources": [
+        "Iranian Red Crescent",
+        "Human Rights Activists in Iran",
+        "ISW",
+        "Wikipedia"
+      ]
     },
     "israel": {
-      "killed": 10,
-      "injured": 85,
+      "killed": 12,
+      "injured": 1247,
+      "missing": 11,
       "details": {
         "telAviv": {
           "killed": 1,
-          "injured": 27
+          "injured": 27,
+          "date": "28 Feb"
         },
         "beitShemesh": {
           "killed": 9,
           "injured": 51,
-          "missing": 11
+          "missing": 11,
+          "date": "1 Mar",
+          "note": "Synagogue hit"
         },
         "jerusalem": {
           "killed": 0,
-          "injured": 6
+          "injured": 6,
+          "date": "1 Mar"
         },
         "northernIsrael": {
           "killed": 0,
-          "injured": 1
+          "injured": 1,
+          "date": "28 Feb"
+        },
+        "haifa": {
+          "killed": 0,
+          "injured": "unknown",
+          "date": "28 Feb"
         }
+      },
+      "injury_breakdown": {
+        "severe": 9,
+        "moderate": 68,
+        "light": 1113,
+        "panic_attack": 44,
+        "unknown": 13
       }
     },
     "us": {
-      "killed": 0,
-      "injured": 0
+      "killed": 6,
+      "injured": 20,
+      "details": "Capt. Cody A. Khork (35, FL), Sgt. 1st Class Noah L. Tietjens (42, NE), Sgt. 1st Class Nicole M. Amor (39, MN), Spc. Declan J. Coady (20, IA) \u2014 died in Kuwait from Iranian drone attack"
     },
     "lebanon": {
-      "pmf": {
-        "killed": 2,
-        "injured": 3
+      "hezbollah": {
+        "killed": 123,
+        "injured": 683,
+        "arrested": 12,
+        "note": "Hezbollah joined fighting after Khamenei killed"
       },
-      "hezbollah": "Unknown"
+      "pmf": {
+        "killed": 4,
+        "injured": 3,
+        "note": "Popular Mobilization Forces in Iraq"
+      }
+    },
+    "syria": {
+      "killed": 5,
+      "injured": 0
     },
     "gulf": {
       "kuwait": {
-        "killed": 1,
-        "injured": 32
+        "killed": 5,
+        "injured": 107,
+        "note": "US Embassy hit by missile on Mar 2"
       },
       "uae": {
-        "killed": 1,
-        "injured": 4
+        "killed": 3,
+        "injured": 78,
+        "note": "Dubai hotels, Abu Dhabi, Al Dhafra base"
       },
       "bahrain": {
-        "killed": 0,
-        "injured": 0
+        "killed": 2,
+        "injured": 6,
+        "note": "Manama, Fifth Fleet HQ, airport"
       },
       "oman": {
+        "killed": 1,
+        "injured": 5,
+        "note": "Port of Duqm, ship attacks"
+      },
+      "qatar": {
+        "killed": 0,
+        "injured": 16,
+        "note": "Al Udeid base, Doha"
+      },
+      "jordan": {
+        "killed": 0,
+        "injured": 5,
+        "note": "Intercepted missiles"
+      },
+      "azerbaijan": {
+        "killed": 0,
+        "injured": 4,
+        "note": "Nakhchivan airport drone strikes"
+      }
+    },
+    "other": {
+      "bangladesh": {
+        "killed": 2,
+        "injured": 0
+      },
+      "india": {
+        "killed": 1,
+        "injured": 0
+      },
+      "philippines": {
+        "killed": 1,
+        "injured": 0
+      },
+      "nepal": {
+        "killed": 1,
+        "injured": 0
+      },
+      "china": {
+        "killed": 1,
+        "injured": 0
+      },
+      "sri_lanka": {
         "killed": 0,
         "injured": 1
       }
@@ -937,13 +1022,15 @@
       "name": "Wikipedia: 2026 Iran war",
       "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
       "trust": "low",
-      "ingested": false
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
       "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
       "trust": "low",
-      "ingested": false
+      "ingested": true,
+      "lastFetched": "2026-03-07"
     },
     {
       "name": "ISW (Understanding War)",
