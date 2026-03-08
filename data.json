@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-07T15:45:00.000000Z",
+  "lastUpdated": "2026-03-08T11:00:02.018495+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Updated March 7, 2026 from Wikipedia and ISW sources. Casualty estimates vary - see confidence levels."
@@ -13,15 +13,23 @@
     "name": "2026 Iran War",
     "startDate": "2026-02-28",
     "status": "Ongoing",
-    "dayCount": 8,
+    "dayCount": 9,
     "operations": {
       "israel": "Operation Roaring Lion",
       "us": "Operation Epic Fury"
     }
   },
   "belligerents": {
-    "coalition": ["United States", "Israel"],
-    "iranAxis": ["Iran", "Hezbollah", "Popular Mobilization Forces (PMF)", "Islamic Resistance in Iraq"]
+    "coalition": [
+      "United States",
+      "Israel"
+    ],
+    "iranAxis": [
+      "Iran",
+      "Hezbollah",
+      "Popular Mobilization Forces (PMF)",
+      "Islamic Resistance in Iraq"
+    ]
   },
   "casualties": {
     "iran": {
@@ -30,22 +38,22 @@
         "killed": "1,000-1,500 (US/Israel estimate)",
         "leadersKilled": 16,
         "details": [
-          "Ali Khamenei (Supreme Leader) — KILLED Feb 28",
-          "Ali Shamkhani (Former SNSC Secretary) — KILLED Feb 28",
-          "Mohammad Pakpour (IRGC Commander) — KILLED Feb 28",
-          "Aziz Nasirzadeh (Defense Minister) — KILLED Feb 28",
-          "Abdolrahim Mousavi (Armed Forces Chief) — KILLED Feb 28",
-          "Majid Mousavi (IRGC Aerospace Commander) — KILLED Feb 28",
-          "Gholamreza Rezaian (Police Intelligence Chief) — KILLED Feb 28",
-          "Mohammad Baseri (Intelligence Ministry) — KILLED Feb 28",
-          "Mohsen Darrebaghi (Deputy Logistics) — KILLED Feb 28",
-          "Bahram Hosseini Motlagh (Operations Planning) — KILLED Feb 28",
-          "Hassan Ali Tajik (Head of Logistics) — KILLED Feb 28",
-          "Hossein Jabal Amelian (SPND Chairman) — KILLED Feb 28",
-          "Reza Mozaffari Nia (Former SPND Chairman) — KILLED Feb 28",
-          "Saleh Asadi (Intelligence Directorate Head) — KILLED Feb 28",
-          "Mohammad Shirazi (Military Office Head) — KILLED Feb 28",
-          "Akbar Ebrahimzadeh (Deputy Supreme Leader Office) — KILLED Feb 28"
+          "Ali Khamenei (Supreme Leader) \u2014 KILLED Feb 28",
+          "Ali Shamkhani (Former SNSC Secretary) \u2014 KILLED Feb 28",
+          "Mohammad Pakpour (IRGC Commander) \u2014 KILLED Feb 28",
+          "Aziz Nasirzadeh (Defense Minister) \u2014 KILLED Feb 28",
+          "Abdolrahim Mousavi (Armed Forces Chief) \u2014 KILLED Feb 28",
+          "Majid Mousavi (IRGC Aerospace Commander) \u2014 KILLED Feb 28",
+          "Gholamreza Rezaian (Police Intelligence Chief) \u2014 KILLED Feb 28",
+          "Mohammad Baseri (Intelligence Ministry) \u2014 KILLED Feb 28",
+          "Mohsen Darrebaghi (Deputy Logistics) \u2014 KILLED Feb 28",
+          "Bahram Hosseini Motlagh (Operations Planning) \u2014 KILLED Feb 28",
+          "Hassan Ali Tajik (Head of Logistics) \u2014 KILLED Feb 28",
+          "Hossein Jabal Amelian (SPND Chairman) \u2014 KILLED Feb 28",
+          "Reza Mozaffari Nia (Former SPND Chairman) \u2014 KILLED Feb 28",
+          "Saleh Asadi (Intelligence Directorate Head) \u2014 KILLED Feb 28",
+          "Mohammad Shirazi (Military Office Head) \u2014 KILLED Feb 28",
+          "Akbar Ebrahimzadeh (Deputy Supreme Leader Office) \u2014 KILLED Feb 28"
         ]
       },
       "civilian": {
@@ -61,43 +69,128 @@
       "injured": 1247,
       "missing": 11,
       "details": {
-        "telAviv": { "killed": 1, "injured": 27 },
-        "beitShemesh": { "killed": 9, "injured": 51, "missing": 11 },
-        "jerusalem": { "killed": 0, "injured": 6 },
-        "northernIsrael": { "killed": 0, "injured": 1 }
+        "telAviv": {
+          "killed": 1,
+          "injured": 27
+        },
+        "beitShemesh": {
+          "killed": 9,
+          "injured": 51,
+          "missing": 11
+        },
+        "jerusalem": {
+          "killed": 0,
+          "injured": 6
+        },
+        "northernIsrael": {
+          "killed": 0,
+          "injured": 1
+        }
       }
     },
     "us": {
       "killed": 6,
       "injured": 18,
-      "details": "Capt. Cody A. Khork, Sgt. 1st Class Noah L. Tietjens, Sgt. 1st Class Nicole M. Amor, Spc. Declan J. Coady — killed in Kuwait from Iranian drone attack"
+      "details": "Capt. Cody A. Khork, Sgt. 1st Class Noah L. Tietjens, Sgt. 1st Class Nicole M. Amor, Spc. Declan J. Coady \u2014 killed in Kuwait from Iranian drone attack"
     },
     "lebanon": {
-      "hezbollah": { "killed": 123, "injured": 683 },
-      "pmf": { "killed": 4, "injured": 3 },
-      "alNabiShayth": { "killed": 9, "injured": 17 }
+      "hezbollah": {
+        "killed": 123,
+        "injured": 683
+      },
+      "pmf": {
+        "killed": 4,
+        "injured": 3
+      },
+      "alNabiShayth": {
+        "killed": 9,
+        "injured": 17
+      }
     },
     "gulf": {
-      "kuwait": { "killed": 5, "injured": 107 },
-      "uae": { "killed": 3, "injured": 78 },
-      "bahrain": { "killed": 2, "injured": 6 },
-      "oman": { "killed": 1, "injured": 5 },
-      "qatar": { "killed": 0, "injured": 16 }
+      "kuwait": {
+        "killed": 5,
+        "injured": 107
+      },
+      "uae": {
+        "killed": 3,
+        "injured": 78
+      },
+      "bahrain": {
+        "killed": 2,
+        "injured": 6
+      },
+      "oman": {
+        "killed": 1,
+        "injured": 5
+      },
+      "qatar": {
+        "killed": 0,
+        "injured": 16
+      }
     },
-    "jordan": { "killed": 0, "injured": 5 },
-    "azerbaijan": { "killed": 0, "injured": 4 },
-    "cyprus": { "killed": 0, "injured": 0, "notes": "UK RAF Akrotiri struck by drone March 2 and 6" }
+    "jordan": {
+      "killed": 0,
+      "injured": 5
+    },
+    "azerbaijan": {
+      "killed": 0,
+      "injured": 4
+    },
+    "cyprus": {
+      "killed": 0,
+      "injured": 0,
+      "notes": "UK RAF Akrotiri struck by drone March 2 and 6"
+    }
   },
   "losses": {
     "aircraft": [
-      { "date": "2026-03-01", "actor": "Iran", "platform": "F-4 Phantom II", "status": "destroyed (preparing to take off)", "confidence": "medium" },
-      { "date": "2026-03-01", "actor": "Iran", "platform": "F-5 (2 aircraft)", "status": "destroyed (preparing to take off)", "confidence": "medium" }
+      {
+        "date": "2026-03-01",
+        "actor": "Iran",
+        "platform": "F-4 Phantom II",
+        "status": "destroyed (preparing to take off)",
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-03-01",
+        "actor": "Iran",
+        "platform": "F-5 (2 aircraft)",
+        "status": "destroyed (preparing to take off)",
+        "confidence": "medium"
+      }
     ],
     "ships": [
-      { "date": "2026-03-01", "name": "Skylight", "flag": "Palau", "type": "Oil/Chemical tanker", "status": "attacked", "casualties": "4 injured" },
-      { "date": "2026-03-01", "name": "Hercules Star", "flag": "Gibraltar", "type": "Oil tanker", "status": "fire extinguished", "casualties": "crew safe" },
-      { "date": "2026-03-01", "name": "MKD Vyom", "flag": "Marshall Islands", "type": "Oil tanker", "status": "retreated to Dubai" },
-      { "date": "2026-03-06", "name": "Iranian drone carrier", "flag": "Iran", "type": "Drone carrier", "status": "US strike, status unknown" }
+      {
+        "date": "2026-03-01",
+        "name": "Skylight",
+        "flag": "Palau",
+        "type": "Oil/Chemical tanker",
+        "status": "attacked",
+        "casualties": "4 injured"
+      },
+      {
+        "date": "2026-03-01",
+        "name": "Hercules Star",
+        "flag": "Gibraltar",
+        "type": "Oil tanker",
+        "status": "fire extinguished",
+        "casualties": "crew safe"
+      },
+      {
+        "date": "2026-03-01",
+        "name": "MKD Vyom",
+        "flag": "Marshall Islands",
+        "type": "Oil tanker",
+        "status": "retreated to Dubai"
+      },
+      {
+        "date": "2026-03-06",
+        "name": "Iranian drone carrier",
+        "flag": "Iran",
+        "type": "Drone carrier",
+        "status": "US strike, status unknown"
+      }
     ],
     "iranianClaims": {
       "usCasualties": "650 soldiers killed/wounded (unverified)",
@@ -106,70 +199,129 @@
     }
   },
   "timeline": [
-    { "date": "2026-02-27", "events": ["Trump orders Operation Epic Fury approved aboard Air Force One"] },
-    { "date": "2026-02-28", "events": [
-      "Operation begins — US/Israel strikes Tehran, Qom, Kermanshah, Isfahan, Karaj",
-      "Khamenei compound destroyed — Supreme Leader killed",
-      "16 Iranian officials/leaders killed in targeted strikes",
-      "Minab school airstrike — 148 civilians killed",
-      "Iran launches missiles at Israel, Bahrain, Kuwait, UAE, Qatar, Saudi Arabia, Jordan, Iraq",
-      "Tel Aviv: 1 killed, 27 injured",
-      "Bahrain: US Fifth Fleet HQ attacked",
-      "Kuwait International Airport struck",
-      "Al Udeid Air Base (Qatar) attacked"
-    ]},
-    { "date": "2026-03-01", "events": [
-      "Strikes on Azadi Stadium, Milad Tower, TV HQ in Tehran",
-      "Beit Shemesh synagogue hit — 9 killed, 51 injured, 11 missing",
-      "Crowne Plaza Hotel Manama (Bahrain) hit by drone",
-      "Bahrain International Airport struck",
-      "Ship attacks begin in Gulf of Oman",
-      "IAF destroys Iranian F-4 and 2 F-5s at Tabriz airbase"
-    ]},
-    { "date": "2026-03-02", "events": [
-      "Hezbollah launches rockets into Israel",
-      "Israeli strikes on Beirut",
-      "US Embassy Kuwait hit by missile",
-      "Mina Salman Port (Bahrain) attacked",
-      "RAF Akrotiri (Cyprus) hit by drone"
-    ]},
-    { "date": "2026-03-03", "events": [
-      "Continued strikes on Iran and Lebanon",
-      "Hezbollah command center in Nabatieh destroyed"
-    ]},
-    { "date": "2026-03-04", "events": [
-      "Israeli F-16 squadron flies over Deir ez-Zor towards Iran",
-      "Escalating airstrikes on Iranian targets"
-    ]},
-    { "date": "2026-03-05", "events": [
-      "Strikes on Urmia, Bandar Abbas, Sanandaj, Bushehr, Tabriz",
-      "Port of Bandar Abbas set ablaze",
-      "Explosions near Azadi Stadium",
-      "District 18 municipality building hit",
-      "Iranian drone carrier struck by US",
-      "Dahieh (Beirut) struck by Israel",
-      "Nakhchivan Airport (Azerbaijan) hit by drone"
-    ]},
-    { "date": "2026-03-06", "events": [
-      "US/Israel claim Iranian missile fire significantly reduced",
-      "Most Iranian missile launchers destroyed",
-      "Isfahan struck again",
-      "Aita al-Shaab (Lebanon) struck",
-      "Khamenei compound targeted again",
-      "Missile shot down over Doha, Qatar",
-      "Iranian drones launched at Cyprus"
-    ]},
-    { "date": "2026-03-07", "events": [
-      "Conflict continues — Day 8",
-      "Offensive operations ongoing",
-      "Iranian capability degraded but not eliminated"
-    ]}
+    {
+      "date": "2026-02-27",
+      "events": [
+        "Trump orders Operation Epic Fury approved aboard Air Force One"
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "events": [
+        "Operation begins \u2014 US/Israel strikes Tehran, Qom, Kermanshah, Isfahan, Karaj",
+        "Khamenei compound destroyed \u2014 Supreme Leader killed",
+        "16 Iranian officials/leaders killed in targeted strikes",
+        "Minab school airstrike \u2014 148 civilians killed",
+        "Iran launches missiles at Israel, Bahrain, Kuwait, UAE, Qatar, Saudi Arabia, Jordan, Iraq",
+        "Tel Aviv: 1 killed, 27 injured",
+        "Bahrain: US Fifth Fleet HQ attacked",
+        "Kuwait International Airport struck",
+        "Al Udeid Air Base (Qatar) attacked"
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "events": [
+        "Strikes on Azadi Stadium, Milad Tower, TV HQ in Tehran",
+        "Beit Shemesh synagogue hit \u2014 9 killed, 51 injured, 11 missing",
+        "Crowne Plaza Hotel Manama (Bahrain) hit by drone",
+        "Bahrain International Airport struck",
+        "Ship attacks begin in Gulf of Oman",
+        "IAF destroys Iranian F-4 and 2 F-5s at Tabriz airbase"
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "events": [
+        "Hezbollah launches rockets into Israel",
+        "Israeli strikes on Beirut",
+        "US Embassy Kuwait hit by missile",
+        "Mina Salman Port (Bahrain) attacked",
+        "RAF Akrotiri (Cyprus) hit by drone"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "events": [
+        "Continued strikes on Iran and Lebanon",
+        "Hezbollah command center in Nabatieh destroyed"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "events": [
+        "Israeli F-16 squadron flies over Deir ez-Zor towards Iran",
+        "Escalating airstrikes on Iranian targets"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "events": [
+        "Strikes on Urmia, Bandar Abbas, Sanandaj, Bushehr, Tabriz",
+        "Port of Bandar Abbas set ablaze",
+        "Explosions near Azadi Stadium",
+        "District 18 municipality building hit",
+        "Iranian drone carrier struck by US",
+        "Dahieh (Beirut) struck by Israel",
+        "Nakhchivan Airport (Azerbaijan) hit by drone"
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "events": [
+        "US/Israel claim Iranian missile fire significantly reduced",
+        "Most Iranian missile launchers destroyed",
+        "Isfahan struck again",
+        "Aita al-Shaab (Lebanon) struck",
+        "Khamenei compound targeted again",
+        "Missile shot down over Doha, Qatar",
+        "Iranian drones launched at Cyprus"
+      ]
+    },
+    {
+      "date": "2026-03-07",
+      "events": [
+        "Conflict continues \u2014 Day 8",
+        "Offensive operations ongoing",
+        "Iranian capability degraded but not eliminated"
+      ]
+    }
   ],
   "sources": [
-    { "name": "Wikipedia: 2026 Iran war", "url": "https://en.wikipedia.org/wiki/2026_Iran_war", "trust": "medium", "ingested": true, "lastFetched": "2026-03-07" },
-    { "name": "Wikipedia: List of attacks during the 2026 Iran conflict", "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict", "trust": "medium", "ingested": true, "lastFetched": "2026-03-07" },
-    { "name": "ISW (Institute for the Study of War)", "url": "https://understandingwar.org/", "trust": "high", "ingested": true, "lastFetched": "2026-03-07" },
-    { "name": "AP News", "url": "https://apnews.com/", "trust": "high", "ingested": true, "lastFetched": "2026-03-06" },
-    { "name": "BBC News", "url": "https://www.bbc.com/news/world/middle_east", "trust": "high", "ingested": true, "lastFetched": "2026-03-06" }
+    {
+      "name": "Wikipedia: 2026 Iran war",
+      "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+      "trust": "medium",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
+    },
+    {
+      "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
+      "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
+      "trust": "medium",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
+    },
+    {
+      "name": "ISW (Institute for the Study of War)",
+      "url": "https://understandingwar.org/",
+      "trust": "high",
+      "ingested": true,
+      "lastFetched": "2026-03-07"
+    },
+    {
+      "name": "AP News",
+      "url": "https://apnews.com/",
+      "trust": "high",
+      "ingested": true,
+      "lastFetched": "2026-03-06"
+    },
+    {
+      "name": "BBC News",
+      "url": "https://www.bbc.com/news/world/middle_east",
+      "trust": "high",
+      "ingested": true,
+      "lastFetched": "2026-03-06"
+    }
   ]
 }
