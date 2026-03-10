@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-09",
+  "lastUpdated": "2026-03-10",
   "note": "Curated sources list for the Iran/Israel/US dashboard. Used for manual pulls now; later for OpenClaw cron/agent update jobs.",
   "feeds": [
     {
@@ -11,7 +11,7 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -23,7 +23,7 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -46,7 +46,7 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -58,7 +58,7 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -79,7 +79,7 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -91,7 +91,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -103,7 +103,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
@@ -115,7 +115,7 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-03-09",
+      "lastFetched": "2026-03-10",
       "status": 200
     },
     {
