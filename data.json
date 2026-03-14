@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-13T11:00:09.917927+00:00",
+  "lastUpdated": "2026-03-14T11:00:09.599411+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Updated March 7, 2026 from Wikipedia and ISW sources. Casualty estimates vary - see confidence levels."
@@ -13,7 +13,7 @@
     "name": "2026 Iran War",
     "startDate": "2026-02-28",
     "status": "Ongoing",
-    "dayCount": 14,
+    "dayCount": 15,
     "operations": {
       "israel": "Operation Roaring Lion",
       "us": "Operation Epic Fury"
