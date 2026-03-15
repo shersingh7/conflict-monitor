@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-03-15T11:00:10.209279+00:00",
+  "lastUpdated": "2026-03-15T12:27:29.565023+00:00",
   "generatedBy": {
     "agent": "openclaw",
-    "note": "Updated March 7, 2026 from Wikipedia and ISW sources. Casualty estimates vary - see confidence levels."
+    "note": "Updated March 15, 2026 from Wikipedia, AP, and BBC. Dashboard uses a curated current snapshot and notes wider source disagreement where relevant."
   },
   "dataQuality": {
     "verified": false,
     "confidence": "medium",
-    "notes": "Updated from Wikipedia (March 7, 2026). Cross-referenced with ISW, AP, BBC where available. Iranian casualty numbers vary significantly between sources."
+    "notes": "Updated March 15, 2026. Source metadata refreshed from Wikipedia/AP/BBC/official pages. Casualty reporting still varies significantly across public sources, especially for Iran and Lebanon."
   },
   "conflict": {
     "name": "2026 Iran War",
@@ -33,9 +33,9 @@
   },
   "casualties": {
     "iran": {
-      "totalKilled": "787-1,548 (estimates vary by source)",
+      "totalKilled": 3040,
       "military": {
-        "killed": "1,000-1,500 (US/Israel estimate)",
+        "killed": 1721,
         "leadersKilled": 16,
         "details": [
           "Ali Khamenei (Supreme Leader) \u2014 KILLED Feb 28",
@@ -54,19 +54,23 @@
           "Saleh Asadi (Intelligence Directorate Head) \u2014 KILLED Feb 28",
           "Mohammad Shirazi (Military Office Head) \u2014 KILLED Feb 28",
           "Akbar Ebrahimzadeh (Deputy Supreme Leader Office) \u2014 KILLED Feb 28"
-        ]
+        ],
+        "range": "Approx. 1,721 implied by HRANA total/civilian split; Hengaw reports 4,420 military killed."
       },
       "civilian": {
-        "killed": "148+ confirmed (Minab school Feb 28), estimates range 1,172-1,332",
+        "killed": 1319,
         "iranianRedCrescent": 1332,
-        "humanRightsActivists": 1172,
-        "details": "Large discrepancy in reporting. Minab school airstrike (148 killed Feb 28) is best-documented civilian incident."
+        "humanRightsActivists": 1319,
+        "details": "Dashboard displays HRANA figure (1,319 civilians killed). Other public reporting ranges lower or higher depending on methodology.",
+        "range": "480-1,319 depending on source"
       },
-      "injured": 747
+      "injured": 18551,
+      "totalKilledRange": "1,444-4,900 depending on source (Iran state, HRANA, Hengaw)",
+      "details": "Primary display uses HRANA: 3,040 killed incl. at least 1,319 civilians. Iranian state reporting says 1,444 killed and 18,551 wounded; Hengaw reports at least 4,900 killed incl. 4,420 military and 480 civilians."
     },
     "israel": {
-      "killed": 12,
-      "injured": 1247,
+      "killed": 19,
+      "injured": 2989,
       "missing": 11,
       "details": {
         "telAviv": {
@@ -84,54 +88,67 @@
         },
         "northernIsrael": {
           "killed": 0,
-          "injured": 1
+          "injured": 59
+        },
+        "militaryKilled": 2,
+        "civilianKilled": 17,
+        "militaryInjured": 14,
+        "eilat": {
+          "killed": 0,
+          "injured": 2
         }
       }
     },
     "us": {
-      "killed": 6,
-      "injured": 18,
-      "details": "Capt. Cody A. Khork, Sgt. 1st Class Noah L. Tietjens, Sgt. 1st Class Nicole M. Amor, Spc. Declan J. Coady \u2014 killed in Kuwait from Iranian drone attack"
+      "killed": 14,
+      "injured": 200,
+      "details": "Per current public reporting in the war infobox: 14 U.S. military personnel dead and 200 wounded."
     },
     "lebanon": {
       "hezbollah": {
-        "killed": 123,
+        "killed": 350,
         "injured": 683
       },
       "pmf": {
-        "killed": 4,
-        "injured": 3
+        "killed": 54,
+        "injured": 81
       },
       "alNabiShayth": {
         "killed": 9,
         "injured": 17
-      }
+      },
+      "killed": 773,
+      "injured": 1933
     },
     "gulf": {
       "kuwait": {
-        "killed": 5,
-        "injured": 107
+        "killed": 8,
+        "injured": 99
       },
       "uae": {
-        "killed": 3,
-        "injured": 78
+        "killed": 6,
+        "injured": 141
       },
       "bahrain": {
-        "killed": 2,
-        "injured": 6
+        "killed": 3,
+        "injured": 38
       },
       "oman": {
-        "killed": 1,
+        "killed": 3,
         "injured": 5
       },
       "qatar": {
         "killed": 0,
         "injured": 16
+      },
+      "saudi": {
+        "killed": 2,
+        "injured": 12
       }
     },
     "jordan": {
       "killed": 0,
-      "injured": 5
+      "injured": 19
     },
     "azerbaijan": {
       "killed": 0,
@@ -140,7 +157,7 @@
     "cyprus": {
       "killed": 0,
       "injured": 0,
-      "notes": "UK RAF Akrotiri struck by drone March 2 and 6"
+      "notes": "Confirmed drone impact with minor damage at RAF Akrotiri; no casualties publicly reported."
     }
   },
   "losses": {
@@ -190,12 +207,28 @@
         "flag": "Iran",
         "type": "Drone carrier",
         "status": "US strike, status unknown"
+      },
+      {
+        "date": "2026-03-11",
+        "name": "Safesea Vishnu",
+        "flag": "Marshall Islands",
+        "type": "Oil tanker",
+        "status": "attacked by Iranian explosive boats near Basra; caught fire",
+        "casualties": "1 crew member killed; 15 evacuated"
+      },
+      {
+        "date": "2026-03-11",
+        "name": "Mayuree Naree",
+        "flag": "Thailand",
+        "type": "Bulk ship",
+        "status": "struck by two projectiles north of Oman; engine room fire",
+        "casualties": "20 evacuated; 3 remained aboard awaiting rescue"
       }
     ],
     "iranianClaims": {
       "usCasualties": "650 soldiers killed/wounded (unverified)",
       "usLosses": "1 THAAD radar destroyed, 1 AN/FPS-132 destroyed, 1 AN/TPS-59 destroyed (verified)",
-      "warshipsSunk": "43 (unverified)"
+      "warshipsSunk": "90 sunk or damaged (US/Israel claim)"
     }
   },
   "timeline": [
@@ -281,9 +314,44 @@
     {
       "date": "2026-03-07",
       "events": [
-        "Conflict continues \u2014 Day 8",
-        "Offensive operations ongoing",
-        "Iranian capability degraded but not eliminated"
+        "Conflict enters second week with offensive operations still active",
+        "Iranian strike tempo reported reduced but not eliminated",
+        "Manual dashboard updates lagged after repo move; source refresh restored on March 15"
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "events": [
+        "Drone strike on hotel room in Beirut kills 4 and injures 10",
+        "Lebanon front continues expanding alongside Iran-Israel exchanges"
+      ]
+    },
+    {
+      "date": "2026-03-09",
+      "events": [
+        "Ballistic missile downed over Gaziantep, Turkey",
+        "NATO/Turkey move additional Patriot coverage toward Malatya"
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "events": [
+        "Safesea Vishnu tanker attacked near Basra; one crew member killed",
+        "Mayuree Naree bulk ship struck north of Oman with engine room fire"
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "events": [
+        "Strike in northern Israel injures 58",
+        "Another ballistic missile intercepted near Incirlik Air Base in Turkey"
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "events": [
+        "Eilat strike injures 2",
+        "Conflict enters third week"
       ]
     }
   ],
@@ -293,14 +361,18 @@
       "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-03-07"
+      "lastFetched": "2026-03-15",
+      "status": 200,
+      "length": 1775325
     },
     {
       "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
       "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-03-07"
+      "lastFetched": "2026-03-15",
+      "status": 200,
+      "length": 334330
     },
     {
       "name": "ISW (Institute for the Study of War)",
