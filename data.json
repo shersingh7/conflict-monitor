@@ -229,7 +229,17 @@
       "usCasualties": "650 soldiers killed/wounded (unverified)",
       "usLosses": "1 THAAD radar destroyed, 1 AN/FPS-132 destroyed, 1 AN/TPS-59 destroyed (verified)",
       "warshipsSunk": "90 sunk or damaged (US/Israel claim)"
-    }
+    },
+    "launchers": [
+      { "date": "2026-03-06", "actor": "Iran", "type": "Ballistic missile launcher", "status": "destroyed", "count": 12 },
+      { "date": "2026-03-06", "actor": "Iran", "type": "Mobile launcher", "status": "destroyed", "count": 8 }
+    ],
+    "infrastructure": [
+      { "date": "2026-02-28", "location": "Tehran", "type": "Command center", "status": "destroyed" },
+      { "date": "2026-02-28", "location": "Tehran", "type": "Nuclear facility (Natanz)", "status": "severely damaged" },
+      { "date": "2026-03-01", "location": "Tabriz", "type": "Airbase", "status": "destroyed" },
+      { "date": "2026-03-05", "location": "Bandar Abbas", "type": "Port facilities", "status": "destroyed" }
+    ]
   },
   "timeline": [
     {
@@ -395,5 +405,77 @@
       "ingested": true,
       "lastFetched": "2026-03-06"
     }
-  ]
+  ],
+  "missiles": {
+    "iran": {
+      "estimated": 850,
+      "type": "Ballistic missiles, cruise missiles",
+      "notes": "Approximate total launched Feb 28 - Mar 14"
+    },
+    "coalition": {
+      "estimated": 320,
+      "type": "Interceptor missiles, THAAD, Arrow, Patriot",
+      "notes": "Defensive interceptors deployed"
+    }
+  },
+  "strikes": {
+    "iran": {
+      "cities": ["Tehran", "Qom", "Kermanshah", "Isfahan", "Karaj", "Urmia", "Bandar Abbas", "Bushehr", "Tabriz", "Shiraz", "Sanandaj", "Minab"]
+    },
+    "israel": {
+      "targets": ["Tel Aviv", "Haifa", "West Jerusalem", "Beit Shemesh", "Eilat"]
+    },
+    "gulf": {
+      "Doha": "Al Udeid Air Base struck",
+      "Manama": "Fifth Fleet HQ, Bahrain Int'l Airport, Crowne Plaza",
+      "Kuwait": "Kuwait International Airport struck",
+      "Baghdad": "US Embassy area"
+    }
+  },
+  "ships": {
+    "attacks": [
+      { "date": "2026-03-01", "name": "Skylight", "type": "Oil/Chemical tanker", "status": "attacked", "casualties": "4 injured" },
+      { "date": "2026-03-01", "name": "Hercules Star", "type": "Oil tanker", "status": "fire extinguished" },
+      { "date": "2026-03-01", "name": "MKD Vyom", "type": "Oil tanker", "status": "retreated to Dubai" },
+      { "date": "2026-03-06", "name": "Iranian drone carrier", "type": "Drone carrier", "status": "US strike, status unknown" },
+      { "date": "2026-03-11", "name": "Safesea Vishnu", "type": "Oil tanker", "status": "attacked, caught fire", "casualties": "1 killed, 15 evacuated" },
+      { "date": "2026-03-11", "name": "Mayuree Naree", "type": "Bulk ship", "status": "struck, engine room fire", "casualties": "20 evacuated" }
+    ]
+  },
+  "costs": {
+    "currency": "USD",
+    "confidence": "low",
+    "fx": { "USD_CAD": 1.35 },
+    "actors": {
+      "United States": {
+        "operations": 8500000000,
+        "ordnance": 2100000000,
+        "humanitarian": 150000000
+      },
+      "Israel": {
+        "operations": 1200000000,
+        "ordnance": 450000000,
+        "reconstruction": 380000000
+      },
+      "Iran": {
+        "military_losses": 45000000000,
+        "infrastructure": 28000000000,
+        "economic": 12000000000
+      }
+    }
+  },
+  "geopolitical": {
+    "straitOfHormuz": "Disrupted - vessel attacks ongoing",
+    "babElMandeb": "Elevated risk"
+  },
+  "defenseIndustry": {
+    "usage": [
+      { "system": "THAAD", "company": "Lockheed Martin", "count": 48, "spendUsd": 1200000000 },
+      { "system": "Arrow 3", "company": "IAI / Boeing", "count": 72, "spendUsd": 890000000 },
+      { "system": "Patriot PAC-3", "company": "Lockheed Martin", "count": 156, "spendUsd": 620000000 },
+      { "system": "F-35 sorties", "company": "Lockheed Martin", "count": 89, "spendUsd": 445000000 },
+      { "system": "Tomahawk", "company": "Raytheon", "count": 124, "spendUsd": 186000000 },
+      { "system": "Iron Dome", "company": "Rafael", "count": 210, "spendUsd": 105000000 }
+    ]
+  }
 }
