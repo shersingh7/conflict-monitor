@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-15T12:27:29.565023+00:00",
+  "lastUpdated": "2026-03-16T11:00:14.087483+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Updated March 15, 2026 from Wikipedia, AP, and BBC. Dashboard uses a curated current snapshot and notes wider source disagreement where relevant."
@@ -13,7 +13,7 @@
     "name": "2026 Iran War",
     "startDate": "2026-02-28",
     "status": "Ongoing",
-    "dayCount": 16,
+    "dayCount": 17,
     "operations": {
       "israel": "Operation Roaring Lion",
       "us": "Operation Epic Fury"
@@ -231,14 +231,46 @@
       "warshipsSunk": "90 sunk or damaged (US/Israel claim)"
     },
     "launchers": [
-      { "date": "2026-03-06", "actor": "Iran", "type": "Ballistic missile launcher", "status": "destroyed", "count": 12 },
-      { "date": "2026-03-06", "actor": "Iran", "type": "Mobile launcher", "status": "destroyed", "count": 8 }
+      {
+        "date": "2026-03-06",
+        "actor": "Iran",
+        "type": "Ballistic missile launcher",
+        "status": "destroyed",
+        "count": 12
+      },
+      {
+        "date": "2026-03-06",
+        "actor": "Iran",
+        "type": "Mobile launcher",
+        "status": "destroyed",
+        "count": 8
+      }
     ],
     "infrastructure": [
-      { "date": "2026-02-28", "location": "Tehran", "type": "Command center", "status": "destroyed" },
-      { "date": "2026-02-28", "location": "Tehran", "type": "Nuclear facility (Natanz)", "status": "severely damaged" },
-      { "date": "2026-03-01", "location": "Tabriz", "type": "Airbase", "status": "destroyed" },
-      { "date": "2026-03-05", "location": "Bandar Abbas", "type": "Port facilities", "status": "destroyed" }
+      {
+        "date": "2026-02-28",
+        "location": "Tehran",
+        "type": "Command center",
+        "status": "destroyed"
+      },
+      {
+        "date": "2026-02-28",
+        "location": "Tehran",
+        "type": "Nuclear facility (Natanz)",
+        "status": "severely damaged"
+      },
+      {
+        "date": "2026-03-01",
+        "location": "Tabriz",
+        "type": "Airbase",
+        "status": "destroyed"
+      },
+      {
+        "date": "2026-03-05",
+        "location": "Bandar Abbas",
+        "type": "Port facilities",
+        "status": "destroyed"
+      }
     ]
   },
   "timeline": [
@@ -371,18 +403,18 @@
       "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-03-15",
+      "lastFetched": "2026-03-16",
       "status": 200,
-      "length": 1775325
+      "length": 1781072
     },
     {
       "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
       "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-03-15",
+      "lastFetched": "2026-03-16",
       "status": 200,
-      "length": 334330
+      "length": 334331
     },
     {
       "name": "ISW (Institute for the Study of War)",
@@ -420,10 +452,29 @@
   },
   "strikes": {
     "iran": {
-      "cities": ["Tehran", "Qom", "Kermanshah", "Isfahan", "Karaj", "Urmia", "Bandar Abbas", "Bushehr", "Tabriz", "Shiraz", "Sanandaj", "Minab"]
+      "cities": [
+        "Tehran",
+        "Qom",
+        "Kermanshah",
+        "Isfahan",
+        "Karaj",
+        "Urmia",
+        "Bandar Abbas",
+        "Bushehr",
+        "Tabriz",
+        "Shiraz",
+        "Sanandaj",
+        "Minab"
+      ]
     },
     "israel": {
-      "targets": ["Tel Aviv", "Haifa", "West Jerusalem", "Beit Shemesh", "Eilat"]
+      "targets": [
+        "Tel Aviv",
+        "Haifa",
+        "West Jerusalem",
+        "Beit Shemesh",
+        "Eilat"
+      ]
     },
     "gulf": {
       "Doha": "Al Udeid Air Base struck",
@@ -434,18 +485,53 @@
   },
   "ships": {
     "attacks": [
-      { "date": "2026-03-01", "name": "Skylight", "type": "Oil/Chemical tanker", "status": "attacked", "casualties": "4 injured" },
-      { "date": "2026-03-01", "name": "Hercules Star", "type": "Oil tanker", "status": "fire extinguished" },
-      { "date": "2026-03-01", "name": "MKD Vyom", "type": "Oil tanker", "status": "retreated to Dubai" },
-      { "date": "2026-03-06", "name": "Iranian drone carrier", "type": "Drone carrier", "status": "US strike, status unknown" },
-      { "date": "2026-03-11", "name": "Safesea Vishnu", "type": "Oil tanker", "status": "attacked, caught fire", "casualties": "1 killed, 15 evacuated" },
-      { "date": "2026-03-11", "name": "Mayuree Naree", "type": "Bulk ship", "status": "struck, engine room fire", "casualties": "20 evacuated" }
+      {
+        "date": "2026-03-01",
+        "name": "Skylight",
+        "type": "Oil/Chemical tanker",
+        "status": "attacked",
+        "casualties": "4 injured"
+      },
+      {
+        "date": "2026-03-01",
+        "name": "Hercules Star",
+        "type": "Oil tanker",
+        "status": "fire extinguished"
+      },
+      {
+        "date": "2026-03-01",
+        "name": "MKD Vyom",
+        "type": "Oil tanker",
+        "status": "retreated to Dubai"
+      },
+      {
+        "date": "2026-03-06",
+        "name": "Iranian drone carrier",
+        "type": "Drone carrier",
+        "status": "US strike, status unknown"
+      },
+      {
+        "date": "2026-03-11",
+        "name": "Safesea Vishnu",
+        "type": "Oil tanker",
+        "status": "attacked, caught fire",
+        "casualties": "1 killed, 15 evacuated"
+      },
+      {
+        "date": "2026-03-11",
+        "name": "Mayuree Naree",
+        "type": "Bulk ship",
+        "status": "struck, engine room fire",
+        "casualties": "20 evacuated"
+      }
     ]
   },
   "costs": {
     "currency": "USD",
     "confidence": "low",
-    "fx": { "USD_CAD": 1.35 },
+    "fx": {
+      "USD_CAD": 1.35
+    },
     "actors": {
       "United States": {
         "operations": 8500000000,
@@ -470,12 +556,42 @@
   },
   "defenseIndustry": {
     "usage": [
-      { "system": "THAAD", "company": "Lockheed Martin", "count": 48, "spendUsd": 1200000000 },
-      { "system": "Arrow 3", "company": "IAI / Boeing", "count": 72, "spendUsd": 890000000 },
-      { "system": "Patriot PAC-3", "company": "Lockheed Martin", "count": 156, "spendUsd": 620000000 },
-      { "system": "F-35 sorties", "company": "Lockheed Martin", "count": 89, "spendUsd": 445000000 },
-      { "system": "Tomahawk", "company": "Raytheon", "count": 124, "spendUsd": 186000000 },
-      { "system": "Iron Dome", "company": "Rafael", "count": 210, "spendUsd": 105000000 }
+      {
+        "system": "THAAD",
+        "company": "Lockheed Martin",
+        "count": 48,
+        "spendUsd": 1200000000
+      },
+      {
+        "system": "Arrow 3",
+        "company": "IAI / Boeing",
+        "count": 72,
+        "spendUsd": 890000000
+      },
+      {
+        "system": "Patriot PAC-3",
+        "company": "Lockheed Martin",
+        "count": 156,
+        "spendUsd": 620000000
+      },
+      {
+        "system": "F-35 sorties",
+        "company": "Lockheed Martin",
+        "count": 89,
+        "spendUsd": 445000000
+      },
+      {
+        "system": "Tomahawk",
+        "company": "Raytheon",
+        "count": 124,
+        "spendUsd": 186000000
+      },
+      {
+        "system": "Iron Dome",
+        "company": "Rafael",
+        "count": 210,
+        "spendUsd": 105000000
+      }
     ]
   }
 }
