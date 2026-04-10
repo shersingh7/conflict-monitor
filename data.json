@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T11:00:12.175382+00:00",
+  "lastUpdated": "2026-04-10T11:00:11.159950+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Updated March 15, 2026 from Wikipedia, AP, and BBC. Dashboard uses a curated current snapshot and notes wider source disagreement where relevant."
@@ -13,7 +13,7 @@
     "name": "2026 Iran War",
     "startDate": "2026-02-28",
     "status": "Ongoing",
-    "dayCount": 41,
+    "dayCount": 42,
     "operations": {
       "israel": "Operation Roaring Lion",
       "us": "Operation Epic Fury"
@@ -403,18 +403,18 @@
       "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-04-09",
+      "lastFetched": "2026-04-10",
       "status": 200,
-      "length": 2465237
+      "length": 2490036
     },
     {
       "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
       "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-04-09",
+      "lastFetched": "2026-04-10",
       "status": 200,
-      "length": 630026
+      "length": 635077
     },
     {
       "name": "ISW (Institute for the Study of War)",
