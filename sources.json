@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-13",
+  "lastUpdated": "2026-04-14",
   "note": "Curated sources list for the Iran/Israel/US dashboard. Used for manual pulls now; later for OpenClaw cron/agent update jobs.",
   "feeds": [
     {
@@ -11,9 +11,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-13",
+      "lastFetched": "2026-04-14",
       "status": 200,
-      "length": 898038
+      "length": 893924
     },
     {
       "id": "bbc_trump_statement_lines",
@@ -24,9 +24,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-13",
+      "lastFetched": "2026-04-14",
       "status": 200,
-      "length": 356887
+      "length": 356489
     },
     {
       "id": "isw_iran_update",
@@ -48,9 +48,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-13",
+      "lastFetched": "2026-04-14",
       "status": 200,
-      "length": 2190924
+      "length": 2180842
     },
     {
       "id": "wiki_list_of_attacks",
@@ -61,9 +61,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-13",
+      "lastFetched": "2026-04-14",
       "status": 200,
-      "length": 682271
+      "length": 685594
     },
     {
       "id": "reuters_middle_east",
@@ -109,7 +109,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-04-13",
+      "lastFetched": "2026-04-14",
       "status": 200,
       "length": 212
     },
@@ -122,9 +122,9 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-04-13",
+      "lastFetched": "2026-04-14",
       "status": 200,
-      "length": 93978
+      "length": 93985
     },
     {
       "id": "netblocks",
