@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T11:00:11.442469+00:00",
+  "lastUpdated": "2026-04-22T23:29:16.012918+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Updated March 15, 2026 from Wikipedia, AP, and BBC. Dashboard uses a curated current snapshot and notes wider source disagreement where relevant."
@@ -421,7 +421,9 @@
       "url": "https://understandingwar.org/",
       "trust": "high",
       "ingested": true,
-      "lastFetched": "2026-03-07"
+      "lastFetched": "2026-04-22",
+      "status": 200,
+      "length": 389
     },
     {
       "name": "AP News",

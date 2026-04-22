@@ -6,22 +6,14 @@
     <title>Conflict Monitor — Iran / Israel / US</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23121c25' stroke='%2381c995' stroke-width='4'/><circle cx='50' cy='50' r='25' fill='none' stroke='%2376d7ea' stroke-width='3'/><ellipse cx='50' cy='50' rx='45' ry='18' fill='none' stroke='%23f28b82' stroke-width='2'/></svg>" type="image/svg+xml">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
-
-    <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -76,8 +68,8 @@
       .card {
         background: var(--bg-card);
         border: 1px solid var(--border-color);
-        border-radius: 6px;
-        transition: border-color 0.2s ease;
+        border-radius: 8px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
       }
 
       .card:hover { border-color: var(--border-accent); }
@@ -88,6 +80,7 @@
         gap: 8px;
         padding: 12px 16px;
         border-bottom: 1px solid var(--border-color);
+        flex-wrap: wrap;
       }
 
       .card-body { padding: 12px 16px; }
@@ -112,6 +105,10 @@
       @keyframes pulse {
         0%, 100% { transform: scale(1); opacity: 1; }
         50% { transform: scale(1.8); opacity: 0; }
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
 
       .badge {
@@ -142,6 +139,7 @@
       .metric-label { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
 
       #map { height: 400px; border-radius: 6px; background: var(--bg-secondary); }
+      @media (max-width: 640px) { #map { height: 280px; } }
 
       .leaflet-container { background: var(--bg-primary); font-family: var(--font-sans); }
       .leaflet-popup-content-wrapper { background: var(--bg-card) !important; border: 1px solid var(--border-color) !important; border-radius: 6px !important; }
@@ -157,8 +155,38 @@
         box-shadow: 0 0 8px rgba(0, 217, 255, 0.5);
       }
 
-      .data-table { width: 100%; font-size: 12px; }
-      .data-table th { text-align: left; color: var(--text-secondary); font-weight: 500; padding: 6px 10px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; }
+      .data-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+      .data-table th {
+        text-align: left;
+        color: var(--text-secondary);
+        font-weight: 500;
+        padding: 6px 10px;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        user-select: none;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .data-table th:hover { color: var(--accent-blue); }
+      .data-table th .sort-indicator {
+        display: inline-block;
+        margin-left: 4px;
+        width: 0; height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 4px solid var(--text-muted);
+        vertical-align: middle;
+        opacity: 0.3;
+        transition: opacity 0.15s;
+      }
+      .data-table th.sort-asc .sort-indicator {
+        opacity: 1; border-bottom: 4px solid var(--accent-blue); border-top: none;
+      }
+      .data-table th.sort-desc .sort-indicator {
+        opacity: 1; border-top: 4px solid var(--accent-blue); border-bottom: none;
+      }
       .data-table td { padding: 6px 10px; color: var(--text-primary); border-bottom: 1px solid var(--border-color); }
       .data-table tr:hover td { background: rgba(138, 180, 248, 0.05); }
 
@@ -170,6 +198,7 @@
         color: var(--text-primary);
         font-size: 12px;
         transition: border-color 0.2s ease;
+        min-width: 0;
       }
 
       .input:focus, .select:focus { outline: none; border-color: var(--accent-blue); }
@@ -177,6 +206,7 @@
       .btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 6px;
         padding: 6px 12px;
         border-radius: 4px;
@@ -185,12 +215,15 @@
         cursor: pointer;
         transition: all 0.2s ease;
         border: none;
+        white-space: nowrap;
       }
 
       .btn-primary { background: #1557d0; color: white; }
       .btn-primary:hover { background: #1a6be0; }
       .btn-secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); }
       .btn-secondary:hover { border-color: var(--border-accent); }
+      .btn-icon { padding: 6px; }
+      .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
       ::-webkit-scrollbar { width: 6px; height: 6px; }
       ::-webkit-scrollbar-track { background: var(--bg-secondary); }
@@ -245,24 +278,95 @@
       }
 
       body.light-mode::before { opacity: 0.15; }
+
+      /* Loading overlay */
+      #loadingOverlay {
+        position: fixed; inset: 0; z-index: 50;
+        background: var(--bg-primary);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 16px;
+      }
+      .spinner {
+        width: 32px; height: 32px;
+        border: 3px solid var(--border-color);
+        border-top-color: var(--accent-blue);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      .skeleton {
+        background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--border-color) 50%, var(--bg-secondary) 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: 4px;
+      }
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+
+      /* Toast notifications */
+      #toastContainer {
+        position: fixed; top: 16px; right: 16px; z-index: 60;
+        display: flex; flex-direction: column; gap: 8px;
+        pointer-events: none;
+      }
+      .toast {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-left: 3px solid var(--accent-blue);
+        border-radius: 6px;
+        padding: 10px 14px;
+        font-size: 12px;
+        color: var(--text-primary);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        pointer-events: auto;
+        animation: toastIn 0.25s ease;
+        max-width: 280px;
+      }
+      .toast.toast-error { border-left-color: var(--danger); }
+      .toast.toast-success { border-left-color: var(--success); }
+      @keyframes toastIn {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="main-container max-w-7xl mx-auto px-4 py-5">
+    <div id="loadingOverlay">
+      <div class="spinner"></div>
+      <div class="text-sm" style="color: var(--text-secondary);">Loading conflict data...</div>
+    </div>
+
+    <div id="toastContainer"></div>
+
+    <div class="main-container max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-5">
 
       <!-- HEADER -->
       <header class="flex flex-col gap-3 md:flex-row md:items-start md:justify-between mb-5">
         <div>
-          <div class="flex items-center gap-2 mb-1">
+          <div class="flex items-center gap-2 mb-1 flex-wrap">
             <div class="status-dot status-live"></div>
-            <h1 class="text-lg font-semibold">Conflict Monitor</h1>
+            <h1 class="text-base sm:text-lg font-semibold">Conflict Monitor</h1>
             <span id="qualityBadge" class="badge badge-warning hidden">UNVERIFIED</span>
           </div>
           <p class="text-xs" style="color: var(--text-secondary);">Iran / Israel / US — Situational awareness dashboard</p>
         </div>
 
-        <div class="flex items-center gap-2">
-          <button id="themeToggle" class="btn btn-secondary">
+        <div class="flex items-center gap-2 flex-wrap">
+          <button id="refreshBtn" class="btn btn-secondary btn-icon" title="Refresh data">
+            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+          </button>
+
+          <button id="themeToggle" class="btn btn-secondary btn-icon" title="Toggle theme">
             <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
             <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
           </button>
@@ -282,13 +386,13 @@
       </header>
 
       <!-- KEY METRICS (HERO) -->
-      <section id="heroStats" class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-5"></section>
+      <section id="heroStats" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 mb-5"></section>
 
       <!-- MAIN CONTENT GRID -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
 
         <!-- LEFT COLUMN: Map + Timeline -->
-        <div class="lg:col-span-2 space-y-4">
+        <div class="lg:col-span-2 space-y-3 sm:space-y-4">
 
           <!-- MAP -->
           <div class="card">
@@ -299,12 +403,12 @@
             </div>
             <div class="card-body">
               <div id="map"></div>
-              <div class="grid grid-cols-3 gap-4 mt-3 pt-3" style="border-top: 1px solid var(--border-color);">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-3 pt-3" style="border-top: 1px solid var(--border-color);">
                 <div>
                   <div id="shipsTotal" class="metric-value text-lg" style="color: var(--accent-cyan);">—</div>
                   <div class="metric-label">Ships Affected</div>
                 </div>
-                <div class="col-span-2">
+                <div class="sm:col-span-2">
                   <div class="text-xs" style="color: var(--text-muted);">Strategic Chokepoints</div>
                   <div id="chokepoints" class="text-sm mt-1" style="color: var(--text-secondary);">—</div>
                 </div>
@@ -317,10 +421,15 @@
             <div class="card-header">
               <i data-lucide="list" class="w-4 h-4" style="color: var(--accent-purple);"></i>
               <span class="font-medium text-sm">Event Timeline</span>
-              <input id="timelineQuery" type="text" class="input ml-auto" placeholder="Filter events..." style="width: 140px;" />
+              <div class="flex items-center gap-2 ml-auto">
+                <button id="timelineSortBtn" class="btn btn-secondary btn-icon" title="Toggle sort order">
+                  <i data-lucide="arrow-down-wide-narrow" class="w-3.5 h-3.5"></i>
+                </button>
+                <input id="timelineQuery" type="text" class="input" placeholder="Filter events..." style="width: 140px; max-width: 40vw;" />
+              </div>
             </div>
             <div class="card-body">
-              <div id="timeline" class="space-y-2 max-h-[350px] overflow-auto pr-2"></div>
+              <div id="timeline" class="space-y-2 max-h-[350px] overflow-auto pr-1"></div>
             </div>
           </div>
 
@@ -335,7 +444,9 @@
               </select>
             </div>
             <div class="card-body">
-              <canvas id="costChart" height="120"></canvas>
+              <div class="relative" style="min-height: 120px;">
+                <canvas id="costChart"></canvas>
+              </div>
               <div class="grid grid-cols-2 gap-4 mt-3 pt-3" style="border-top: 1px solid var(--border-color);">
                 <div>
                   <div class="text-xs" style="color: var(--text-muted);">Total Estimated</div>
@@ -351,7 +462,7 @@
         </div>
 
         <!-- RIGHT COLUMN: Data Tables -->
-        <div class="space-y-4">
+        <div class="space-y-3 sm:space-y-4">
 
           <!-- CASUALTIES OVERVIEW -->
           <div class="card">
@@ -368,7 +479,9 @@
               </select>
             </div>
             <div class="card-body">
-              <canvas id="casualtiesChart" height="140"></canvas>
+              <div class="relative" style="min-height: 140px;">
+                <canvas id="casualtiesChart"></canvas>
+              </div>
               <div id="casualtyCards" class="grid grid-cols-2 gap-2 mt-3 pt-3" style="border-top: 1px solid var(--border-color);"></div>
             </div>
           </div>
@@ -380,7 +493,9 @@
               <span class="font-medium text-sm">Missiles Deployed</span>
             </div>
             <div class="card-body">
-              <canvas id="missilesChart" height="120"></canvas>
+              <div class="relative" style="min-height: 120px;">
+                <canvas id="missilesChart"></canvas>
+              </div>
             </div>
           </div>
 
@@ -391,21 +506,23 @@
               <span class="font-medium text-sm">Losses & Damage</span>
             </div>
             <div class="card-body">
-              <canvas id="lossesChart" height="100"></canvas>
+              <div class="relative" style="min-height: 100px;">
+                <canvas id="lossesChart"></canvas>
+              </div>
               <div class="mt-3 pt-3" style="border-top: 1px solid var(--border-color);">
                 <div class="text-xs font-medium mb-2" style="color: var(--text-secondary);">Aircraft</div>
-                <div class="overflow-auto" style="max-height: 80px;">
-                  <table class="data-table">
-                    <thead><tr><th>Date</th><th>Actor</th><th>Type</th><th>Status</th></tr></thead>
+                <div class="overflow-auto" style="max-height: 140px;">
+                  <table class="data-table" id="aircraftLossTableWrap">
+                    <thead><tr><th data-sort="date">Date <span class="sort-indicator"></span></th><th data-sort="actor">Actor <span class="sort-indicator"></span></th><th data-sort="platform">Type <span class="sort-indicator"></span></th><th data-sort="status">Status <span class="sort-indicator"></span></th></tr></thead>
                     <tbody id="aircraftLossTable"></tbody>
                   </table>
                 </div>
               </div>
               <div class="mt-3 pt-3" style="border-top: 1px solid var(--border-color);">
                 <div class="text-xs font-medium mb-2" style="color: var(--text-secondary);">Ships</div>
-                <div class="overflow-auto" style="max-height: 80px;">
-                  <table class="data-table">
-                    <thead><tr><th>Date</th><th>Name</th><th>Type</th><th>Status</th></tr></thead>
+                <div class="overflow-auto" style="max-height: 140px;">
+                  <table class="data-table" id="shipLossTableWrap">
+                    <thead><tr><th data-sort="date">Date <span class="sort-indicator"></span></th><th data-sort="name">Name <span class="sort-indicator"></span></th><th data-sort="type">Type <span class="sort-indicator"></span></th><th data-sort="status">Status <span class="sort-indicator"></span></th></tr></thead>
                     <tbody id="shipLossTable"></tbody>
                   </table>
                 </div>
@@ -424,10 +541,12 @@
               </select>
             </div>
             <div class="card-body">
-              <canvas id="industryChart" height="120"></canvas>
-              <div class="mt-3 pt-3 overflow-auto" style="max-height: 120px; border-top: 1px solid var(--border-color);">
-                <table class="data-table">
-                  <thead><tr><th>System</th><th>Company</th><th class="text-right">Count</th></tr></thead>
+              <div class="relative" style="min-height: 120px;">
+                <canvas id="industryChart"></canvas>
+              </div>
+              <div class="mt-3 pt-3 overflow-auto" style="max-height: 180px; border-top: 1px solid var(--border-color);">
+                <table class="data-table" id="industryTableWrap">
+                  <thead><tr><th data-sort="system">System <span class="sort-indicator"></span></th><th data-sort="company">Company <span class="sort-indicator"></span></th><th class="text-right" data-sort="count">Count <span class="sort-indicator"></span></th></tr></thead>
                   <tbody id="industryTable"></tbody>
                 </table>
               </div>
@@ -441,7 +560,7 @@
       <div id="qualityCallout" class="hidden card mt-4" style="border-left: 3px solid var(--warning);">
         <div class="card-body">
           <div class="flex items-start gap-3">
-            <i data-lucide="alert-triangle" class="w-4 h-4" style="color: var(--warning);"></i>
+            <i data-lucide="alert-triangle" class="w-4 h-4 flex-shrink-0" style="color: var(--warning); margin-top: 1px;"></i>
             <div>
               <div class="font-medium text-sm" style="color: var(--warning);">Prototype Dataset</div>
               <div class="text-xs mt-1" style="color: var(--text-secondary);" id="qualityNotes">—</div>
@@ -453,7 +572,7 @@
       </div>
 
       <!-- FOOTER -->
-      <footer class="mt-5 pt-4 flex items-center justify-between text-xs" style="border-top: 1px solid var(--border-color); color: var(--text-muted);">
+      <footer class="mt-5 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs" style="border-top: 1px solid var(--border-color); color: var(--text-muted);">
         <div class="flex items-center gap-2">
           <i data-lucide="folder" class="w-3 h-3"></i>
           <span class="font-mono" id="localPath">conflict-monitor/</span>

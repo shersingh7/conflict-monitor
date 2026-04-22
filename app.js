@@ -1,6 +1,7 @@
 /*
-  Conflict Monitor Dashboard
+  Conflict Monitor Dashboard v2
   Reads ./data.json and renders situational awareness
+  Features: auto-refresh, sortable tables, data cache, toasts
 */
 
 const $ = (id) => document.getElementById(id);
@@ -10,6 +11,9 @@ let map = null;
 let mapLayerGroup = null;
 let industryChart = null;
 let isDarkMode = true;
+let dataCache = { data: null, ts: 0, ttl: 30000 };
+let autoRefreshInterval = null;
+let timelineSortAsc = false; // default newest first
 
 const CITY_COORDS = {
   Tehran: [35.6892, 51.3890], Qom: [34.6399, 50.8759], Kermanshah: [34.3142, 47.0650],
@@ -28,16 +32,58 @@ const COLORS = {
   grid: 'rgba(42, 49, 66, 0.5)', text: '#9aa0a6',
 };
 
-function formatIso(iso) { try { return new Date(iso).toLocaleString(); } catch { return iso; } }
+function formatIso(iso) {
+  try { return new Date(iso).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+  catch { return iso; }
+}
 function safeNum(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }
 function escapeHtml(s) { return String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
 
-async function loadData() {
-  const res = await fetch('./data.json', { cache: 'no-store' });
-  if (!res.ok) throw new Error(`Failed to load data.json (${res.status})`);
-  return res.json();
+/* ── Toast notifications ── */
+function showToast(message, type = 'info') {
+  const container = $('toastContainer');
+  if (!container) return;
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.textContent = message;
+  container.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(20px)'; setTimeout(() => toast.remove(), 250); }, 3000);
 }
 
+/* ── Data loading with cache ── */
+async function loadData(force = false) {
+  const now = Date.now();
+  if (!force && dataCache.data && (now - dataCache.ts) < dataCache.ttl) {
+    return dataCache.data;
+  }
+  try {
+    const res = await fetch('./data.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    dataCache = { data, ts: now, ttl: 30000 };
+    return data;
+  } catch (err) {
+    if (dataCache.data) {
+      showToast('Using cached data — refresh failed', 'error');
+      return dataCache.data;
+    }
+    throw err;
+  }
+}
+
+function setLoading(isLoading) {
+  const overlay = $('loadingOverlay');
+  if (overlay) overlay.style.display = isLoading ? 'flex' : 'none';
+}
+
+function setRefreshSpinning(spin) {
+  const btn = $('refreshBtn');
+  if (!btn) return;
+  const icon = btn.querySelector('i, svg');
+  if (icon) icon.style.animation = spin ? 'spin 1s linear infinite' : '';
+}
+
+/* ── Icons & theme ── */
 function initIcons() { if (typeof lucide !== 'undefined') lucide.createIcons(); }
 
 function initTheme() {
@@ -63,9 +109,9 @@ function initTheme() {
 function updateClock() {
   const el = $('currentTime');
   if (!el) return;
-  const update = () => { el.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' }); };
-  update();
-  setInterval(update, 1000);
+  const fmt = () => { el.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' }); };
+  fmt();
+  setInterval(fmt, 1000);
 }
 
 function setHeader(data) {
@@ -85,7 +131,7 @@ function setHeader(data) {
         const name = typeof s === 'string' ? s : (s.name || s.title || 'Source');
         const url = typeof s === 'object' && s?.url ? String(s.url) : '';
         const li = document.createElement('li');
-        li.innerHTML = url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(name)}</a>` : escapeHtml(name);
+        li.innerHTML = url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer" style="color:var(--accent-blue);">${escapeHtml(name)}</a>` : escapeHtml(name);
         list.appendChild(li);
       });
     }
@@ -184,6 +230,7 @@ function upsertCharts(data, focus = 'all') {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: { legend: { labels: { color: COLORS.text, boxWidth: 10, font: { size: 10 } } } },
       scales: { x: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } }, y: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } } }
     }
@@ -198,16 +245,23 @@ function upsertCharts(data, focus = 'all') {
   charts.missiles = new Chart(ctx2, {
     type: hasMissiles ? 'doughnut' : 'bar',
     data: hasMissiles ? { labels: ['Coalition', 'Iran'], datasets: [{ data: [cm, im], backgroundColor: [COLORS.coalition, COLORS.iran] }] } : { labels: ['No data'], datasets: [{ data: [0], backgroundColor: 'rgba(90,95,100,0.5)' }] },
-    options: { responsive: true, plugins: { legend: { labels: { color: COLORS.text, font: { size: 10 } } } } }
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: COLORS.text, font: { size: 10 } } } } }
   });
 }
 
 function renderTimeline(data, query) {
   const needle = (query || '').trim().toLowerCase();
-  const items = Array.isArray(data.timeline) ? data.timeline : [];
+  const items = Array.isArray(data.timeline) ? [...data.timeline] : [];
   const root = $('timeline');
   if (!root) return;
   root.innerHTML = '';
+
+  // Sort by date
+  items.sort((a, b) => {
+    const da = new Date(a.date || 0).getTime();
+    const db = new Date(b.date || 0).getTime();
+    return timelineSortAsc ? da - db : db - da;
+  });
 
   const filtered = items.map(d => ({ date: d.date, events: (d.events || []).map(e => typeof e === 'string' ? { text: e } : e) }))
     .filter(row => !needle || [row.date, ...row.events.map(e => e.text)].join(' ').toLowerCase().includes(needle));
@@ -297,6 +351,7 @@ function renderCosts(data) {
     data: { labels: actorNames.length ? actorNames : ['No data'], datasets: datasets.length ? datasets : [{ data: [0], backgroundColor: 'rgba(90,95,100,0.5)' }] },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: { legend: { labels: { color: COLORS.text, boxWidth: 10, font: { size: 10 } } }, tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${formatMoney(ctx.raw, currency)}` } } },
       scales: { x: { stacked: true, ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } }, y: { stacked: true, ticks: { color: COLORS.text, font: { size: 10 }, callback: v => v >= 1e9 ? `${Math.round(v/1e9)}B` : v >= 1e6 ? `${Math.round(v/1e6)}M` : v }, grid: { color: COLORS.grid } } }
     }
@@ -304,6 +359,68 @@ function renderCosts(data) {
 
   const confEl = $('costConfidence');
   if (confEl) confEl.textContent = `${costs.confidence || 'unknown'} confidence • ${costs.currency || 'USD'}`;
+}
+
+/* ── Sortable tables ── */
+const tableSortState = new Map(); // tableId -> { key, dir }
+
+function compareValues(a, b) {
+  const na = Number(a), nb = Number(b);
+  if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;
+  return String(a).localeCompare(String(b));
+}
+
+function renderSortableTable(tbodyId, data, columns, defaultSort = null) {
+  const tbody = $(tbodyId);
+  const table = tbody?.closest('table');
+  if (!tbody || !table) return;
+
+  // Read current sort from headers
+  const headers = table.querySelectorAll('th[data-sort]');
+  let sortKey = null, sortDir = 'asc';
+  headers.forEach(th => {
+    if (th.classList.contains('sort-asc')) { sortKey = th.dataset.sort; sortDir = 'asc'; }
+    else if (th.classList.contains('sort-desc')) { sortKey = th.dataset.sort; sortDir = 'desc'; }
+  });
+
+  let rows = [...data];
+  if (sortKey) {
+    rows.sort((a, b) => {
+      const cmp = compareValues(a[sortKey], b[sortKey]);
+      return sortDir === 'desc' ? -cmp : cmp;
+    });
+  } else if (defaultSort) {
+    rows.sort((a, b) => compareValues(a[defaultSort], b[defaultSort]));
+  }
+
+  tbody.innerHTML = '';
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="${columns.length}" style="color:var(--text-muted);">No data</td></tr>`;
+    return;
+  }
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = columns.map(c => `<td>${r[c] ?? '—'}</td>`).join('');
+    tbody.appendChild(tr);
+  });
+}
+
+function initSortableTables() {
+  document.querySelectorAll('table.data-table').forEach(table => {
+    table.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => {
+        const key = th.dataset.sort;
+        const isAsc = th.classList.contains('sort-asc');
+        // Reset all headers in this table
+        table.querySelectorAll('th[data-sort]').forEach(h => { h.classList.remove('sort-asc', 'sort-desc'); });
+        // Set new state
+        if (!isAsc) { th.classList.add('sort-asc'); }
+        else { th.classList.add('sort-desc'); }
+        // Re-render
+        refreshAll();
+      });
+    });
+  });
 }
 
 function renderLosses(data) {
@@ -319,22 +436,22 @@ function renderLosses(data) {
   charts.losses = new Chart(ctx, {
     type: 'bar',
     data: { labels: ['Aircraft', 'Ships', 'Launchers', 'Infrastructure'], datasets: [{ data: [aircraft.length, ships.length, launchers.length, infra.length], backgroundColor: ['rgba(242,139,130,0.8)', 'rgba(138,180,248,0.8)', 'rgba(253,214,99,0.8)', 'rgba(154,160,166,0.8)'] }] },
-    options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } }, y: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } } } }
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } }, y: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } } } }
   });
 
-  const airTbody = $('aircraftLossTable');
-  if (airTbody) {
-    airTbody.innerHTML = '';
-    aircraft.slice(0, 5).forEach(r => { airTbody.innerHTML += `<tr><td>${r.date || '—'}</td><td>${r.actor || '—'}</td><td>${r.platform || r.type || '—'}</td><td>${r.status || '—'}</td></tr>`; });
-    if (!aircraft.length) airTbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted);">No data</td></tr>';
-  }
+  renderSortableTable('aircraftLossTable', aircraft.map(r => ({
+    date: r.date || '—',
+    actor: r.actor || '—',
+    platform: r.platform || r.type || '—',
+    status: r.status || '—'
+  })), ['date', 'actor', 'platform', 'status'], 'date');
 
-  const shipTbody = $('shipLossTable');
-  if (shipTbody) {
-    shipTbody.innerHTML = '';
-    ships.slice(0, 5).forEach(r => { shipTbody.innerHTML += `<tr><td>${r.date || '—'}</td><td>${r.name || '—'}</td><td>${r.type || '—'}</td><td>${r.status || '—'}</td></tr>`; });
-    if (!ships.length) shipTbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted);">No data</td></tr>';
-  }
+  renderSortableTable('shipLossTable', ships.map(r => ({
+    date: r.date || '—',
+    name: r.name || '—',
+    type: r.type || '—',
+    status: r.status || '—'
+  })), ['date', 'name', 'type', 'status'], 'date');
 }
 
 function renderIndustry(data) {
@@ -356,41 +473,87 @@ function renderIndustry(data) {
   industryChart = new Chart(ctx, {
     type: 'bar',
     data: { labels: sorted.map(x => x.company), datasets: [{ label: metric === 'spend' ? 'Spend' : 'Count', data: sorted.map(x => metric === 'spend' ? x.spend : x.count), backgroundColor: 'rgba(197,138,249,0.8)' }] },
-    options: { responsive: true, indexAxis: 'y', plugins: { legend: { labels: { color: COLORS.text, font: { size: 10 } } } }, scales: { x: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } }, y: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } } } }
+    options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { labels: { color: COLORS.text, font: { size: 10 } } } }, scales: { x: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } }, y: { ticks: { color: COLORS.text, font: { size: 10 } }, grid: { color: COLORS.grid } } } }
   });
 
-  const tbody = $('industryTable');
-  if (tbody) {
-    tbody.innerHTML = '';
-    usage.sort((a, b) => b.count - a.count).slice(0, 8).forEach(r => { tbody.innerHTML += `<tr><td>${r.system || r.product || '—'}</td><td>${r.company || '—'}</td><td class="text-right font-mono">${r.count?.toLocaleString() || '—'}</td></tr>`; });
-    if (!usage.length) tbody.innerHTML = '<tr><td colspan="3" style="color:var(--text-muted);">No data</td></tr>';
+  renderSortableTable('industryTable', usage.map(r => ({
+    system: r.system || r.product || '—',
+    company: r.company || '—',
+    count: r.count?.toLocaleString() || '—'
+  })), ['system', 'company', 'count'], 'count');
+}
+
+/* ── Main render orchestrator ── */
+async function refreshAll(force = false) {
+  setRefreshSpinning(true);
+  try {
+    const data = await loadData(force);
+    setHeader(data);
+    renderHeroStats(data);
+    renderCasualtyCards(data);
+    upsertCharts(data, $('focusSide')?.value || 'all');
+    renderTimeline(data, ($('timelineQuery')?.value || ''));
+    renderMapMarkers(data);
+    renderShipsAndChokepoints(data);
+    renderCosts(data);
+    renderLosses(data);
+    renderIndustry(data);
+    initIcons();
+    if (force) showToast('Data refreshed', 'success');
+  } catch (err) {
+    console.error(err);
+    showToast(`Refresh failed: ${err.message}`, 'error');
+  } finally {
+    setRefreshSpinning(false);
+    setLoading(false);
   }
+}
+
+function initAutoRefresh() {
+  if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+  autoRefreshInterval = setInterval(() => refreshAll(false), 5 * 60 * 1000); // 5 minutes
 }
 
 async function boot() {
   initIcons();
   initTheme();
+  initSortableTables();
   updateClock();
 
-  const data = await loadData();
-  setHeader(data);
-  renderHeroStats(data);
-  renderCasualtyCards(data);
-  upsertCharts(data, $('focusSide')?.value || 'all');
-  renderTimeline(data, '');
-  renderMapMarkers(data);
-  renderShipsAndChokepoints(data);
-  renderCosts(data);
-  renderLosses(data);
-  renderIndustry(data);
+  // Event listeners
+  $('refreshBtn')?.addEventListener('click', () => refreshAll(true));
+  $('focusSide')?.addEventListener('change', () => refreshAll(false));
+  $('costCurrency')?.addEventListener('change', () => refreshAll(false));
+  $('industryMetric')?.addEventListener('change', () => refreshAll(false));
+  $('timelineQuery')?.addEventListener('input', e => renderTimeline(dataCache.data, e.target.value));
+  $('timelineSortBtn')?.addEventListener('click', () => {
+    timelineSortAsc = !timelineSortAsc;
+    const icon = $('timelineSortBtn').querySelector('i, svg');
+    if (icon) icon.style.transform = timelineSortAsc ? 'rotate(180deg)' : '';
+    renderTimeline(dataCache.data, ($('timelineQuery')?.value || ''));
+  });
 
-  $('focusSide')?.addEventListener('change', async () => upsertCharts(await loadData(), $('focusSide').value));
-  $('costCurrency')?.addEventListener('change', async () => renderCosts(await loadData()));
-  $('industryMetric')?.addEventListener('change', async () => renderIndustry(await loadData()));
-  $('timelineQuery')?.addEventListener('input', async e => renderTimeline(await loadData(), e.target.value));
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'r') {
+      e.preventDefault();
+      refreshAll(true);
+    }
+  });
+
+  // Visibility API — refresh when tab becomes visible after hidden
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && dataCache.ts && (Date.now() - dataCache.ts) > dataCache.ttl) {
+      refreshAll(false);
+    }
+  });
+
+  await refreshAll(false);
+  initAutoRefresh();
 }
 
 boot().catch(err => {
   console.error(err);
+  setLoading(false);
   document.body.innerHTML = `<div style="padding:24px;font-family:var(--font-sans);color:var(--text-primary);"><h1 style="font-size:18px;margin-bottom:8px;">Failed to load</h1><pre style="white-space:pre-wrap;background:var(--bg-card);padding:12px;border-radius:6px;font-family:var(--font-mono);font-size:11px;">${escapeHtml(err.stack || err)}</pre><p style="opacity:0.7;margin-top:12px;font-size:12px;">Ensure you're serving this over HTTP (not file://).</p></div>`;
 });
