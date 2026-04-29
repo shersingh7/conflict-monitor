@@ -11,9 +11,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 85084
+      "length": 83631
     },
     {
       "id": "bbc_trump_statement_lines",
@@ -24,7 +24,7 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
       "length": 10190
     },
@@ -37,9 +37,9 @@
       "refresh": "2x_daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 389
+      "length": 12532
     },
     {
       "id": "wiki_2026_iran_war",
@@ -50,9 +50,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 763727
+      "length": 762321
     },
     {
       "id": "wiki_list_of_attacks",
@@ -63,9 +63,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 256784
+      "length": 260631
     },
     {
       "id": "reuters_middle_east",
@@ -85,7 +85,7 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
       "length": 227
     },
@@ -98,9 +98,9 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-04-27",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 233
+      "length": 231
     },
     {
       "id": "idf_press",
@@ -111,7 +111,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
       "length": 447085
     },
@@ -124,9 +124,9 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 620
+      "length": 357
     },
     {
       "id": "netblocks",
@@ -137,9 +137,9 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 23422
+      "length": 4652
     },
     {
       "id": "liveuamap",
@@ -150,9 +150,9 @@
       "refresh": "hourly",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-04-28",
+      "lastFetched": "2026-04-29",
       "status": 200,
-      "length": 156719
+      "length": 165965
     }
   ]
 }
