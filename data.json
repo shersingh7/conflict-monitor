@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-14T11:00:31.535616+00:00",
+  "lastUpdated": "2026-05-15T11:00:22.991502+00:00",
   "generatedBy": {
     "agent": "openclaw",
     "note": "Updated March 15, 2026 from Wikipedia, AP, and BBC. Dashboard uses a curated current snapshot and notes wider source disagreement where relevant."
@@ -403,27 +403,27 @@
       "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-05-14",
+      "lastFetched": "2026-05-15",
       "status": 200,
-      "length": 801091
+      "length": 816380
     },
     {
       "name": "Wikipedia: List of attacks during the 2026 Iran conflict",
       "url": "https://en.wikipedia.org/wiki/List_of_attacks_during_the_2026_Iran_conflict",
       "trust": "medium",
       "ingested": true,
-      "lastFetched": "2026-05-14",
+      "lastFetched": "2026-05-15",
       "status": 200,
-      "length": 228102
+      "length": 264719
     },
     {
       "name": "ISW (Institute for the Study of War)",
       "url": "https://understandingwar.org/",
       "trust": "high",
       "ingested": true,
-      "lastFetched": "2026-05-14",
+      "lastFetched": "2026-05-15",
       "status": 200,
-      "length": 12522
+      "length": 12570
     },
     {
       "name": "AP News",
