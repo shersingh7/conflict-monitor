@@ -11,9 +11,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
-      "length": 894847
+      "length": 896082
     },
     {
       "id": "bbc_trump_statement_lines",
@@ -24,9 +24,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
-      "length": 440412
+      "length": 423772
     },
     {
       "id": "isw_iran_update",
@@ -37,7 +37,7 @@
       "refresh": "2x_daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
       "length": 364303
     },
@@ -50,9 +50,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
-      "length": 2731369
+      "length": 2729222
     },
     {
       "id": "wiki_list_of_attacks",
@@ -63,9 +63,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
-      "length": 586881
+      "length": 587111
     },
     {
       "id": "reuters_middle_east",
@@ -111,7 +111,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
       "length": 212
     },
@@ -137,7 +137,7 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-06-21",
+      "lastFetched": "2026-06-22",
       "status": 200,
       "length": 57242
     },
