@@ -11,9 +11,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
-      "length": 897616
+      "length": 898605
     },
     {
       "id": "bbc_trump_statement_lines",
@@ -24,9 +24,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
-      "length": 441093
+      "length": 440287
     },
     {
       "id": "isw_iran_update",
@@ -37,9 +37,9 @@
       "refresh": "2x_daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
-      "length": 376371
+      "length": 376585
     },
     {
       "id": "wiki_2026_iran_war",
@@ -50,9 +50,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
-      "length": 3976636
+      "length": 3939158
     },
     {
       "id": "wiki_list_of_attacks",
@@ -63,9 +63,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
-      "length": 920734
+      "length": 926922
     },
     {
       "id": "reuters_middle_east",
@@ -111,7 +111,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
       "length": 212
     },
@@ -137,7 +137,7 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
       "length": 57242
     },
@@ -150,9 +150,9 @@
       "refresh": "hourly",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-07-06",
+      "lastFetched": "2026-07-07",
       "status": 200,
-      "length": 381537
+      "length": 402423
     }
   ]
 }
