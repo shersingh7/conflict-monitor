@@ -11,9 +11,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
-      "length": 889319
+      "length": 896412
     },
     {
       "id": "bbc_trump_statement_lines",
@@ -24,9 +24,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
-      "length": 425626
+      "length": 424428
     },
     {
       "id": "isw_iran_update",
@@ -37,7 +37,7 @@
       "refresh": "2x_daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
       "length": 385733
     },
@@ -50,9 +50,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
-      "length": 3661071
+      "length": 3727508
     },
     {
       "id": "wiki_list_of_attacks",
@@ -63,9 +63,9 @@
       "refresh": "daily",
       "access": "web_fetch_ok",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
-      "length": 932886
+      "length": 934799
     },
     {
       "id": "reuters_middle_east",
@@ -111,7 +111,7 @@
       "refresh": "daily",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
       "length": 212
     },
@@ -137,7 +137,7 @@
       "refresh": "daily",
       "access": "likely_ok",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
       "length": 57242
     },
@@ -150,9 +150,9 @@
       "refresh": "hourly",
       "access": "unknown",
       "ingested": true,
-      "lastFetched": "2026-07-19",
+      "lastFetched": "2026-07-20",
       "status": 200,
-      "length": 352318
+      "length": 317175
     }
   ]
 }
